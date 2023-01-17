@@ -240,8 +240,6 @@ footer {
   height: 60px;
   color: rgb(35, 35, 35);
   background-color: rgba(200, 200, 200, 0.5);
-  font-size: 1.5rem;
-  font-family: "Permanent Marker", cursive;
 }
 
 footer > a {

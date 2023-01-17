@@ -164,7 +164,11 @@ include './exercices.php';
       <?php endforeach; ?>
     </div>
   </section>
-  <footer>By Zakari Boureghda <a href="https://github.com/Zakari-B"><img class="logo" src="./assets/img/GitHub_Logo.png" alt="Github profile link" /></a></footer>
+  <footer>
+    <a href="https://github.com/Zakari-B">
+      <img class="logo" src="./assets/img/GitHub_Logo.png" alt="Github profile link" />
+    </a>
+  </footer>
 </body>
 
 </html>
