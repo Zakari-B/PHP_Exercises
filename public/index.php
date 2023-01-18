@@ -11,11 +11,11 @@
 
 <body>
     <main class="container">
-        <a id="test" href="./Archeology/archeology_index.php">
+        <a id="test" href="./Archeology/">
             <img class="arrow-link" id="archeology-link" src="../assets/img/arrow.png" alt="Magnifying glass icon" />
             <p id="archeo-text">Head to the archeological site !</p>
         </a>
-        <a href="./Garden/garden_index.php">
+        <a href="./Garden/">
             <img class="mglass-link" id="garden-link" src="../assets/img/glass.png" alt="Magnifying glass icon" />
             <p id="garden-text">Go to the garden.</p>
         </a>
