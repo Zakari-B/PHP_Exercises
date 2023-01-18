@@ -1,0 +1,13 @@
+:root {
+  --bodyHeight: 854px;
+  --bodyWidth: 1280px;
+}
+
+body {
+  background-image: url("./img/homebg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: var(--bodyWidth);
+  height: var(--bodyHeight);
+  background-color: rgba(10, 10, 10, 0.9);
+}
