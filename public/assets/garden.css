@@ -1,0 +1,145 @@
+body {
+    background-image: url("./img/grassbg.jpg");
+}
+
+.exercise {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing4);
+    margin-inline: var(--spacing4);
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    border: 5px solid var(--dark);
+    background-color: var(--light);
+    border-radius: 15px;
+    padding: var(--spacing2);
+    font-family: var(--font-text);
+}
+
+div.description p {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing);
+}
+
+div.description>img {
+    align-self: center;
+    width: 66%;
+}
+
+.description .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description h2 {
+    font-size: 2rem;
+}
+
+.description .title a {
+    text-decoration: none;
+    color: var(--intermediate);
+    padding: 0.2rem 0.5rem;
+    background-color: var(--primary);
+    border-radius: 4px;
+}
+
+.description a:hover {
+    filter: brightness(110%);
+}
+
+.description a:active {
+    filter: brightness(90%);
+}
+
+.garden {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    border: 30px solid transparent;
+    border-image: url("./img/plankbg.jpg") 10% round;
+}
+
+.garden>.cat {
+    --image-size: 100px;
+    position: absolute;
+    height: var(--image-size);
+    transform: rotate(var(--rotate, 0));
+    top: var(--top, 0);
+}
+
+.garden>.cat:nth-child(1) {
+    --top: calc(var(--image-size) * -1);
+    left: 75%;
+}
+
+.garden>.cat:nth-child(2) {
+    right: calc(var(--image-size) * -1);
+    --rotate: 90deg;
+}
+
+.garden>.cat:nth-child(3) {
+    --top: calc(var(--image-size) * -1);
+    left: 15%;
+}
+
+.garden>.cat:nth-child(4) {
+    left: calc(var(--image-size) * -1);
+    --rotate: -90deg;
+}
+
+.garden>.cat:nth-child(5) {
+    --image-size: 250px;
+    --top: calc(var(--image-size) * -0.9);
+    left: 40%;
+}
+
+.garden>.cat:nth-child(6) {
+    top: calc(var(--image-size) * -1);
+    left: 0%;
+}
+
+.garden-plot {
+    --plot-size: 60px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--plot-size);
+    aspect-ratio: 1/1;
+}
+
+.earth {
+    background-image: url("./img/soilbg.jpg");
+}
+
+
+@media screen and (min-width: 1200px) {
+    .exercise {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .exercise>div.description {
+        flex-direction: column;
+        min-width: 330px;
+        width: calc(100vw - 660px - 40px);
+        margin-bottom: 0;
+    }
+
+    .final>div.garden {
+        margin-top: 100px;
+    }
+
+    section {
+        margin-bottom: 150px;
+    }
+}
