@@ -27,10 +27,10 @@ include './exercises.php';
     </header>
     <main class="content">
         <a href="#">
-            <img class="exercise-link" id="ex1" src="./assets/img/glass.png" alt="Magnifying glass icon" />
+            <img class="mglass-link" id="ex1" src="../assets/img/glass.png" alt="Magnifying glass icon" />
         </a>
         <a href="#">
-            <img class="exercise-link" id="ex2" src="./assets/img/glass.png" alt="Magnifying glass icon" />
+            <img class="mglass-link" id="ex2" src="../assets/img/glass.png" alt="Magnifying glass icon" />
         </a>
     </main>
     <footer>
