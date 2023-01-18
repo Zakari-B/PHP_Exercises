@@ -21,8 +21,8 @@ body {
 
 .mglass-link,
 .arrow-link {
-  height: 80px;
-  width: 80px;
+  height: 120px;
+  width: 120px;
   padding: 15px;
   border: 3px solid rgb(75, 75, 75);
   border-radius: 60px;
@@ -47,7 +47,7 @@ a {
 #garden-text {
   display: none;
   position: absolute;
-  bottom: 90px;
+  bottom: 120px;
   right: 160px;
   font-size: 2rem;
   padding: 15px;
@@ -70,7 +70,7 @@ a {
 #archeo-text {
   display: none;
   position: absolute;
-  bottom: 30px;
+  bottom: 60px;
   left: 145px;
   font-size: 2rem;
   padding: 15px;
