@@ -4,7 +4,15 @@
 //// DO NOT TOUCH THIS FILE ////
 /*****************************/
 
-include __DIR__ . '/../src/exercices.php';
+require __DIR__ . '/../src/gardenExercises.php';
+
+$gardens[1] = plantFirstGarden();
+$gardens[2] = plantSecondGarden();
+$gardens[3] = plantThirdGarden();
+$gardens[4] = plantFourthGarden();
+$gardens[5] = plantFifthGarden();
+$gardens[6] = plantSixthGarden();
+
 $stage = $_GET['stage'] ?? 1;
 $garden = $gardens[$stage] ?? [];
 ?>

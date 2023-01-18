@@ -102,6 +102,11 @@ div.description>img {
     left: 40%;
 }
 
+.garden>.cat:nth-child(6) {
+    top: calc(var(--image-size) * -1);
+    left: 0%;
+}
+
 .garden-plot {
     --plot-size: 60px;
     font-size: 2rem;
