@@ -1,3 +1,5 @@
+@import url("../../assets/reset.css");
+
 :root {
   --bodyHeight: 1080px;
   --bodyWidth: 1920px;
