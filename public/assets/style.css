@@ -2,7 +2,7 @@
 @import url("vars.css");
 
 body {
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: var(--bodybg);
 }
 
 .container {

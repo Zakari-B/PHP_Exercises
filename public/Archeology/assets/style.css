@@ -2,7 +2,7 @@
 @import url("../../assets/vars.css");
 
 body {
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: var(--bodybg);
 }
 
 .archeology-main {
@@ -43,7 +43,7 @@ header > h1 {
   height: var(--size);
   width: var(--size);
   padding: 15px;
-  border: 3px solid rgb(25, 25, 25);
+  border: 3px solid var(--dark);
   border-radius: 60px;
   background-color: rgba(200, 200, 200, 0.75);
 }
@@ -60,7 +60,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: var(--footerHeight);
-  color: rgb(35, 35, 35);
+  color: var(--dark);
   background-color: rgba(200, 200, 200, 0.5);
 }
 
