@@ -1,0 +1,144 @@
+@import url("../../assets/reset.css");
+@import url("../../assets/vars.css");
+
+body {
+  background-color: rgba(10, 10, 10, 0.9);
+}
+
+.garden-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: var(--GardenContentWidth);
+  height: var(--GardenContentHeight);
+  margin: auto;
+  background-image: url("./img/gardenbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--navHeight);
+}
+
+header > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-family: "Permanent Marker", cursive;
+  line-height: 4rem;
+  padding: 1rem;
+  color: rgb(200, 200, 200);
+  background-color: rgba(35, 35, 35, 0.6);
+  border-radius: 15px;
+}
+
+div.content {
+  height: calc(
+    var(--GardenContentHeight) - var(--navHeight) - var(--footerHeight)
+  );
+  position: relative;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--footerHeight);
+  color: rgb(35, 35, 35);
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+footer > a {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+.mglass-link,
+.arrow-link {
+  height: 100px;
+  width: 100px;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.25);
+}
+
+#home {
+  --size: 75px;
+  margin-left: calc(0px - var(--size));
+  height: var(--size);
+  width: var(--size);
+  padding: 15px;
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+#ex1-link {
+  position: absolute;
+  bottom: 310px;
+  right: 30px;
+  transform: rotate(330deg);
+}
+
+#ex1-link:hover ~ #ex1-text {
+  display: block;
+}
+
+#ex1-text {
+  display: none;
+  position: absolute;
+  bottom: 305px;
+  right: 115px;
+  font-size: 2rem;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: 15px;
+  background-color: rgba(200, 200, 200, 0.7);
+}
+
+#ex2-link {
+  position: absolute;
+  bottom: 230px;
+  left: 210px;
+}
+
+#ex2-link:hover ~ #ex2-text {
+  display: block;
+}
+
+#ex2-text {
+  display: none;
+  position: absolute;
+  bottom: 245px;
+  left: 295px;
+  font-size: 2rem;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: 15px;
+  background-color: rgba(200, 200, 200, 0.7);
+}

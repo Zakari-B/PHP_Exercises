@@ -53,9 +53,3 @@ function plantSixthGarden(int $rows = 10, int $columns = 10): array
 
     return $garden;
 }
-
-/**********************/
-// DO NOT TOUCH THIS //
-/*********************/
-
-
