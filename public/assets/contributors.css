@@ -1,5 +1,9 @@
 @import url("./reset.css");
 
+:root {
+  --navHeight: 120px;
+}
+
 body {
   background-color: rgba(25, 25, 25, 0.9);
 }
@@ -11,13 +15,35 @@ ul {
   color: rgba(200, 200, 200, 0.9);
 }
 
-h1 {
-  text-align: center;
-  margin: 1rem auto 3rem;
-  font-size: 3rem;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--navHeight);
 }
 
-h1 ~ p {
+header > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  line-height: 4rem;
+  padding: 1rem;
+  color: rgb(200, 200, 200);
+}
+
+#home {
+  --size: 60px;
+  margin-left: calc(0px - var(--size));
+  height: var(--size);
+  width: var(--size);
+  padding: 15px;
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
+header ~ p {
   font-size: 1.5rem;
   margin-left: 5%;
 }
