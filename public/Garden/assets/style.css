@@ -1,130 +1,64 @@
 @import url("../../assets/reset.css");
 
-section {
-  align-items: center;
-  justify-content: center;
-  margin: auto;
+:root {
+  --contentHeight: 800px;
+  --contentWidth: 1200px;
+  --navHeight: 120px;
+  --footerHeight: 60px;
 }
-
 body {
-  min-height: 100vh;
-  min-width: 780px;
-  background-image: url("./img/grassbg.jpg");
+  background-color: rgba(10, 10, 10, 0.9);
 }
 
-.exercise {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.exercise.final > div.garden {
-  margin-top: 160px;
-}
-
-.exercise > div.description {
-  display: flex;
-  flex-direction: column;
-  min-width: 330px;
-  width: 95%;
-  max-width: 660px;
-  max-height: 660px;
-  border: 5px solid rgb(55, 55, 55);
-  background-color: rgb(200, 200, 200);
-  border-radius: 15px;
-  padding: 20px;
-  font-family: "Permanent Marker", cursive;
-  margin-bottom: 50px;
-}
-
-div.description p {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-div.description > img {
-  align-self: center;
-  max-height: 300px;
-  max-width: 300px;
-}
-
-.half-v {
-  height: 50%;
-}
-
-div.description h2 {
-  font-size: 2rem;
-  text-decoration: underline;
-  margin-bottom: 10px;
-}
-
-.exercise > div.garden {
+.garden-main {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: var(--contentWidth);
+  height: var(--contentHeight);
+  margin: auto;
+  background-image: url("./img/gardenbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  display: flex;
   align-items: center;
-  width: 660px;
-  height: 660px;
-  border: 30px solid transparent;
-  border-image: url("./img/plankbg.jpg") 10% round;
-  margin-top: 40px;
+  justify-content: center;
+  height: var(--navHeight);
 }
 
-.exercise > div.garden > img.cat1 {
-  position: absolute;
-  top: -112px;
-  right: 0;
-  height: 100px;
-}
-
-.exercise > div.garden > img.cat2 {
-  position: absolute;
-  top: 0;
-  right: -108px;
-  height: 100px;
-  transform: rotate(90deg);
-}
-
-.exercise > div.garden > img.cat3 {
-  position: absolute;
-  top: -112px;
-  left: 0;
-  height: 100px;
-}
-
-.exercise > div.garden > img.cat4 {
-  position: absolute;
-  top: 0;
-  left: -108px;
-  height: 100px;
-  transform: rotate(-90deg);
-}
-
-.exercise > div.garden > img.cat5 {
-  position: absolute;
-  top: -238px;
-  left: 50;
-  height: 250px;
-}
-
-.exercise > div.garden > img.cat6 {
-  position: absolute;
-  top: -112px;
-  left: 50;
-  height: 100px;
-}
-
-.garden-plot {
-  font-size: 2rem;
+header > h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60px;
-  height: 60px;
+  font-size: 3rem;
+  font-family: "Permanent Marker", cursive;
+  line-height: 4rem;
+  padding: 1rem;
+  color: rgb(200, 200, 200);
+  background-color: rgba(35, 35, 35, 0.6);
+  border-radius: 15px;
 }
 
-.earth {
-  background-image: url("./img/soilbg.jpg");
+div.content {
+  height: calc(var(--contentHeight) - var(--navHeight) - var(--footerHeight));
+  position: relative;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--footerHeight);
+  color: rgb(35, 35, 35);
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+footer > a {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
@@ -132,65 +66,84 @@ div.description h2 {
   width: 40px;
 }
 
-header {
-  height: 7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  margin-bottom: 3rem;
+.mglass-link,
+.arrow-link {
+  height: 100px;
+  width: 100px;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.25);
 }
 
-header > h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  font-family: "Permanent Marker", cursive;
-  line-height: 4rem;
-  padding: 1rem;
-  color: rgb(100, 200, 20);
-  background-color: rgba(55, 55, 55, 0.5);
+#home {
+  --size: 75px;
+  margin-left: calc(0px - var(--size));
+  height: var(--size);
+  width: var(--size);
+  padding: 15px;
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+#ex1-link {
+  position: absolute;
+  bottom: 310px;
+  right: 30px;
+  transform: rotate(330deg);
+}
+
+#ex1-link:hover ~ #ex1-text {
+  display: block;
+}
+
+#ex1-text {
+  display: none;
+  position: absolute;
+  bottom: 305px;
+  right: 115px;
+  font-size: 2rem;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
   border-radius: 15px;
+  background-color: rgba(200, 200, 200, 0.7);
 }
 
-section {
-  margin-bottom: 50px;
+#ex2-link {
+  position: absolute;
+  bottom: 230px;
+  left: 210px;
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  color: rgb(35, 35, 35);
-  background-color: rgba(200, 200, 200, 0.5);
+#ex2-link:hover ~ #ex2-text {
+  display: block;
 }
 
-footer > a {
-  margin-left: 15px;
-  display: flex;
-  align-items: center;
-}
-
-@media screen and (min-width: 1200px) {
-  .exercise {
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .exercise > div.description {
-    flex-direction: column;
-    min-width: 330px;
-    width: calc(100vw - 660px - 40px);
-    margin-bottom: 0;
-  }
-
-  .final > div.garden {
-    margin-top: 100px;
-  }
-
-  section {
-    margin-bottom: 150px;
-  }
+#ex2-text {
+  display: none;
+  position: absolute;
+  /* top: 10%;
+  left: 40%; */
+  bottom: 245px;
+  left: 295px;
+  font-size: 2rem;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: 15px;
+  background-color: rgba(200, 200, 200, 0.7);
 }

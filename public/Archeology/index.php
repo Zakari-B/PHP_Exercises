@@ -21,23 +21,26 @@ include './exercises.php';
     <title>Archeological site</title>
 </head>
 
-<body class="archeology-main">
-    <header>
-        <h1>Archeological site</h1>
-    </header>
-    <main class="content">
-        <a href="#">
-            <img class="mglass-link" id="ex1" src="../assets/img/glass.png" alt="Magnifying glass icon" />
-        </a>
-        <a href="#">
-            <img class="mglass-link" id="ex2" src="../assets/img/glass.png" alt="Magnifying glass icon" />
-        </a>
+<body>
+    <main class="archeology-main">
+        <header>
+            <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
+            <h1>Archeological site</h1>
+        </header>
+        <main class="content">
+            <a href="#">
+                <img class="mglass-link" id="ex1" src="../assets/img/glass.png" alt="Magnifying glass icon" />
+            </a>
+            <a href="#">
+                <img class="mglass-link" id="ex2" src="../assets/img/glass.png" alt="Magnifying glass icon" />
+            </a>
+        </main>
+        <footer>
+            <a href="/contributors.html">
+                <img class="logo" src="./assets/img/GitHub_Logo.png" alt="Github profile link" />
+            </a>
+        </footer>
     </main>
-    <footer>
-        <a href="https://github.com/Zakari-B">
-            <img class="logo" src="./assets/img/GitHub_Logo.png" alt="Github profile link" />
-        </a>
-    </footer>
 </body>
 
 </html>

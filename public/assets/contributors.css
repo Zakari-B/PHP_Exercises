@@ -1,0 +1,96 @@
+@import url("./reset.css");
+
+body {
+  background-color: rgba(25, 25, 25, 0.9);
+}
+
+h1,
+h2,
+p,
+ul {
+  color: rgba(200, 200, 200, 0.9);
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem auto 3rem;
+  font-size: 3rem;
+}
+
+h1 ~ p {
+  font-size: 1.5rem;
+  margin-left: 5%;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.cards-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 48%;
+  border: 1px solid rgba(200, 200, 200, 0.9);
+  border-radius: 15px;
+  margin-top: 2rem;
+  display: flex;
+}
+
+.profile-container-left {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(200, 200, 200, 0.9);
+  border-radius: 15px 0 0 15px;
+}
+
+.profile-picture {
+  width: 100%;
+  height: calc(100% - 64px);
+  border-radius: 15px 0 0 0;
+}
+
+.profile-links {
+  height: 64px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(100, 100, 100, 0.9);
+  border-radius: 0 0 0 15px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+}
+
+.profile-container-right {
+  width: 67%;
+  padding: 1rem;
+}
+
+.profile-container-right > h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.profile-container-right > p {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.profile-container-right > ul {
+  list-style: initial;
+  padding-left: 1rem;
+}

@@ -1,18 +1,26 @@
 @import url("../../assets/reset.css");
 
 :root {
-  --bodyHeight: 1080px;
-  --bodyWidth: 1920px;
+  --contentHeight: 1080px;
+  --contentWidth: 1920px;
   --navHeight: 120px;
   --footerHeight: 60px;
 }
 
 body {
-  height: var(--bodyHeight);
-  width: var(--bodyWidth);
+  background-color: rgba(10, 10, 10, 0.9);
+}
+
+.archeology-main {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: rgba(10, 10, 10, 0.9);
+  width: var(--contentWidth);
+  height: var(--contentHeight);
+  margin: auto;
+  background-image: url("./img/ruins.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -35,8 +43,19 @@ header > h1 {
   border-radius: 15px;
 }
 
+#home {
+  --size: 75px;
+  margin-left: calc(0px - var(--size));
+  height: var(--size);
+  width: var(--size);
+  padding: 15px;
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
 main.content {
-  height: calc(var(--bodyHeight) - var(--navHeight) - var(--footerHeight));
+  height: calc(var(--contentHeight) - var(--navHeight) - var(--footerHeight));
   position: relative;
 }
 
@@ -50,7 +69,6 @@ footer {
 }
 
 footer > a {
-  margin-left: 15px;
   display: flex;
   align-items: center;
 }
@@ -58,12 +76,6 @@ footer > a {
 .logo {
   height: 40px;
   width: 40px;
-}
-
-.archeology-main {
-  background-image: url("./img/ruins.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .exercise1 {

@@ -14,7 +14,7 @@ include __DIR__ . '/../../src/garden_exercises.php';
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="/Garden/assets/style.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/Garden/assets/field_style.css" media="screen" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -165,7 +165,7 @@ include __DIR__ . '/../../src/garden_exercises.php';
     </div>
   </section>
   <footer>
-    <a href="https://github.com/Zakari-B">
+    <a href="/contributors.html">
       <img class="logo" src="./assets/img/GitHub_Logo.png" alt="Github profile link" />
     </a>
   </footer>
