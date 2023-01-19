@@ -1,18 +1,14 @@
 @import url("reset.css");
-
-:root {
-  --contentHeight: 854px;
-  --contentWidth: 1280px;
-}
+@import url("vars.css");
 
 body {
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: var(--bodybg);
 }
 
 .container {
   position: relative;
-  width: var(--contentWidth);
-  height: var(--contentHeight);
+  width: var(--HomeContentWidth);
+  height: var(--HomeContentHeight);
   margin: auto;
   background-image: url("./img/homebg.jpg");
   background-size: cover;

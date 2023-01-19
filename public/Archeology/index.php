@@ -37,7 +37,7 @@ include './exercises.php';
         </main>
         <footer>
             <a href="/contributors.html">
-                <img class="logo" src="./assets/img/GitHub_Logo.png" alt="Github profile link" />
+                <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Github profile link" />
             </a>
         </footer>
     </main>

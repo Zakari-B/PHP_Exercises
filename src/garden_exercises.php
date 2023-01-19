@@ -13,30 +13,35 @@
 function plantFirstGarden(int $rows = 10, int $columns = 10): array
 {
     $garden = [];
+
     return $garden;
 }
 
 function plantSecondGarden(int $rows = 10, int $columns = 10): array
 {
     $garden = [];
+
     return $garden;
 }
 
 function plantThirdGarden(int $rows = 10, int $columns = 10): array
 {
     $garden = [];
+
     return $garden;
 }
 
 function plantFourthGarden(int $rows = 10, int $columns = 10): array
 {
     $garden = [];
+
     return $garden;
 }
 
 function plantFifthGarden(int $rows = 10, int $columns = 10): array
 {
     $garden = [];
+
     return $garden;
 }
 
@@ -45,16 +50,6 @@ function plantFifthGarden(int $rows = 10, int $columns = 10): array
 function plantSixthGarden(int $rows = 10, int $columns = 10): array
 {
     $garden = [];
+
     return $garden;
 }
-
-/**********************/
-// DO NOT TOUCH THIS //
-/*********************/
-
-$firstGarden = plantFirstGarden();
-$secondGarden = plantSecondGarden();
-$thirdGarden = plantThirdGarden();
-$fourthGarden = plantFourthGarden();
-$fifthGarden = plantFifthGarden();
-$sixthGarden = plantSixthGarden();

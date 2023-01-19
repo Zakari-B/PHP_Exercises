@@ -1,0 +1,21 @@
+:root {
+  --HomeContentHeight: 854px;
+  --HomeContentWidth: 1280px;
+  --GardenContentHeight: 800px;
+  --GardenContentWidth: 1200px;
+  --ArcheologyContentHeight: 1080px;
+  --ArcheologyContentWidth: 1920px;
+  --navHeight: 120px;
+  --footerHeight: 60px;
+  --text-font-archeology: "Luxurious Roman", cursive;
+  --text-font-garden: "Permanent Marker", cursive;
+  --bodybg: rgba(10, 10, 10, 0.9);
+  --dark: rgb(20, 20, 20);
+  --intermediate: rgb(125, 125, 125);
+  --light: rgb(230, 230, 230);
+  /*
+  --spacing: 1rem;
+  --spacing2: 2rem;
+  --spacing4: 4rem;
+  */
+}

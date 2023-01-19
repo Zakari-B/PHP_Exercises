@@ -1,21 +1,16 @@
 @import url("../../assets/reset.css");
+@import url("../../assets/vars.css");
 
-:root {
-  --contentHeight: 800px;
-  --contentWidth: 1200px;
-  --navHeight: 120px;
-  --footerHeight: 60px;
-}
 body {
-  background-color: rgba(10, 10, 10, 0.9);
+  background-color: var(--bodybg);
 }
 
 .garden-main {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: var(--contentWidth);
-  height: var(--contentHeight);
+  width: var(--GardenContentWidth);
+  height: var(--GardenContentHeight);
   margin: auto;
   background-image: url("./img/gardenbg.jpg");
   background-size: cover;
@@ -43,7 +38,9 @@ header > h1 {
 }
 
 div.content {
-  height: calc(var(--contentHeight) - var(--navHeight) - var(--footerHeight));
+  height: calc(
+    var(--GardenContentHeight) - var(--navHeight) - var(--footerHeight)
+  );
   position: relative;
 }
 
@@ -52,7 +49,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: var(--footerHeight);
-  color: rgb(35, 35, 35);
+  color: var(--dark);
   background-color: rgba(200, 200, 200, 0.5);
 }
 
@@ -82,7 +79,7 @@ footer > a {
   height: var(--size);
   width: var(--size);
   padding: 15px;
-  border: 3px solid rgb(25, 25, 25);
+  border: 3px solid var(--dark);
   border-radius: 60px;
   background-color: rgba(200, 200, 200, 0.75);
 }
@@ -137,8 +134,6 @@ p {
 #ex2-text {
   display: none;
   position: absolute;
-  /* top: 10%;
-  left: 40%; */
   bottom: 245px;
   left: 295px;
   font-size: 2rem;

@@ -5,6 +5,16 @@
 /*****************************/
 
 include __DIR__ . '/../../src/garden_exercises.php';
+
+$gardens[1] = plantFirstGarden();
+$gardens[2] = plantSecondGarden();
+$gardens[3] = plantThirdGarden();
+$gardens[4] = plantFourthGarden();
+$gardens[5] = plantFifthGarden();
+$gardens[6] = plantSixthGarden();
+
+$stage = $_GET['stage'] ?? 1;
+$garden = $gardens[$stage] ?? [];
 ?>
 
 <!DOCTYPE html>
@@ -22,153 +32,69 @@ include __DIR__ . '/../../src/garden_exercises.php';
 </head>
 
 <body>
-  <header>
-    <h1>My garden</h1>
-  </header>
-  <section class="exercise">
-    <div class="description">
-      <div class="half-v">
-        <h2>First stage:</h2>
-        <p>I have an empty plot of size 10x10 and I'd like to plant some seeds 🌱 in all the available spaces. Please help me do it, it should look like this when you're done:</p>
-      </div>
-      <img src="./assets/img/examples/01.png" alt="Image of what's expected" class="example-img" />
-    </div>
-    <div class="garden earth">
-      <img src="./assets/img/cat.png" alt="A cat" class="cat1" />
-      <?php foreach ($firstGarden as $row) : ?>
-        <div class="garden-row">
-          <?php foreach ($row as $column) : ?>
-            <div class="garden-plot">
-              <?php echo $column; ?>
+  <div class="container">
+    <header>
+      <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
+      <h1>The field</h1>
+    </header>
+    <main class="exercise <?php if ($stage === '5') {
+                            echo "final";
+                          } ?>">
+      <div class="description">
+        <div class="half-v">
+          <div class="description-top">
+            <h2>Stage <?= $stage ?></h2>
+            <div class="nav-btn">
+              <?php if ($stage > 1) : ?>
+
+                <a href="?stage=<?= $stage - 1 ?>"> <- Prev</a>
+                  <?php endif; ?>
+                  <?php if ($stage < 6) : ?>
+                    <a href="?stage=<?= $stage + 1 ?>"> Next -> </a>
+                  <?php endif; ?>
             </div>
-          <?php endforeach; ?>
+          </div>
+          <?php if ($stage <= 5) : ?>
+            <p>Reproduce the image below</p>
+          <?php else : ?>
+            <p>Freestyle stage. Challenge yourself with loops</p>
+          <?php endif; ?>
         </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-  <section class="exercise">
-    <div class="description">
-      <div class="half-v">
-        <h2>Second stage:</h2>
-        <p>Alright, some seeds have grown. I didn't plant the same thing in all the spaces though. Right now, only the trees on the outside have grown, they're deciduous trees. Now, my plot looks like that:</p>
+        <?php if ($stage <= 5) : ?>
+          <img src="./assets/img/examples/0<?= $stage ?>.png" alt="Image of stage" class="example-img" />
+        <?php endif; ?>
       </div>
-      <img src="./assets/img/examples/02.png" alt="Image of what's expected" class="example-img" />
-    </div>
-    <div class="garden earth">
-      <img src="./assets/img/cat.png" alt="A cat" class="cat1" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat2" />
-      <?php foreach ($secondGarden as $row) : ?>
-        <div class="garden-row">
-          <?php foreach ($row as $column) : ?>
-            <div class="garden-plot">
-              <?php echo $column; ?>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-  <section class="exercise">
-    <div class="description">
-      <div class="half-v">
-        <h2>Third stage:</h2>
-        <p>Great ! The garden has grown again, the shamrock I sowed in a X pattern looks nice, take a look :</p>
+      <div class="garden earth">
+        <?php if ($stage < 5) : ?>
+          <?php for ($i = 1; $i <= $stage; $i++) : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat<?php echo $i ?>" />
+          <?php endfor; ?>
+        <?php endif; ?>
+        <?php if ($stage === '5') : ?>
+          <?php for ($i = 1; $i < 5; $i++) : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat<?php echo $i ?>" />
+          <?php endfor; ?>
+          <img src="./assets/img/cat2.png" alt="A cat" class="cat5" />
+        <?php endif; ?>
+
+        <?php $rows = $columns = 10; ?>
+        <?php for ($i = 0; $i < $rows; $i++) : ?>
+          <div class="garden-row">
+            <?php for ($j = 0; $j < $columns; $j++) : ?>
+              <div class="garden-plot">
+                <?= $garden[$i][$j] ?? ' '; ?>
+              </div>
+            <?php endfor; ?>
+          </div>
+        <?php endfor; ?>
       </div>
-      <img src="./assets/img/examples/03.png" alt="Image of what's expected" class="example-img" />
-    </div>
-    <div class="garden earth">
-      <img src="./assets/img/cat.png" alt="A cat" class="cat1" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat2" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat3" />
-      <?php foreach ($thirdGarden as $row) : ?>
-        <div class="garden-row">
-          <?php foreach ($row as $column) : ?>
-            <div class="garden-plot">
-              <?php echo $column; ?>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-  <section class="exercise">
-    <div class="description">
-      <div class="half-v">
-        <h2>Fourth stage:</h2>
-        <p>It gets tougher, and better. The palm trees have grown around the center, just like this :</p>
-      </div>
-      <img src="./assets/img/examples/04.png" alt="Image of what's expected" class="example-img" />
-    </div>
-    <div class="garden earth">
-      <img src="./assets/img/cat.png" alt="A cat" class="cat1" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat2" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat3" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat4" />
-      <?php foreach ($fourthGarden as $row) : ?>
-        <div class="garden-row">
-          <?php foreach ($row as $column) : ?>
-            <div class="garden-plot">
-              <?php echo $column; ?>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-  <section class="exercise final">
-    <div class="description">
-      <div class="half-v">
-        <h2>Fifth stage:</h2>
-        <p>Finally ! The garden is complete now that the evergreens and leafy plants have grown too. Take a look :</p>
-      </div>
-      <img src="./assets/img/examples/05.png" alt="Image of what's expected" class="example-img" />
-    </div>
-    <div class="garden earth">
-      <img src="./assets/img/cat.png" alt="A cat" class="cat1" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat2" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat3" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat4" />
-      <img src="./assets/img/cat2.png" alt="A cat" class="cat5" />
-      <?php foreach ($fifthGarden as $row) : ?>
-        <div class="garden-row">
-          <?php foreach ($row as $column) : ?>
-            <div class="garden-plot">
-              <?php echo $column; ?>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-  <section class="exercise">
-    <div class="description">
-      <div class="half-v">
-        <h2>Freestyle:</h2>
-        <p>Alright, you've seen my garden, now show me yours. Create your own garden with what you've learned so far.</p>
-      </div>
-    </div>
-    <div class="garden earth">
-      <img src="./assets/img/cat.png" alt="A cat" class="cat1" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat2" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat3" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat4" />
-      <img src="./assets/img/cat.png" alt="A cat" class="cat6" />
-      <?php foreach ($sixthGarden as $row) : ?>
-        <div class="garden-row">
-          <?php foreach ($row as $column) : ?>
-            <div class="garden-plot">
-              <?php echo $column; ?>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-  <footer>
-    <a href="/contributors.html">
-      <img class="logo" src="./assets/img/GitHub_Logo.png" alt="Github profile link" />
-    </a>
-  </footer>
+    </main>
+    <footer>
+      <a href="/contributors.html">
+        <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Github profile link" />
+      </a>
+    </footer>
+  </div>
 </body>
 
 </html>

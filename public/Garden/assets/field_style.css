@@ -1,25 +1,48 @@
 @import url("../../assets/reset.css");
 
-section {
+main {
   align-items: center;
   justify-content: center;
   margin: auto;
 }
 
+#home {
+  --size: 75px;
+  margin-left: calc(0px - var(--size));
+  height: var(--size);
+  width: var(--size);
+  padding: 15px;
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
 body {
-  min-height: 100vh;
-  min-width: 780px;
+  background-color: rgba(10, 10, 10, 0.9);
+}
+
+.container {
+  min-width: 960px;
   background-image: url("./img/grassbg.jpg");
+}
+
+.btn {
+  background-color: var(--light);
+  color: var(--dark);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 .exercise {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin: 50px;
 }
 
 .exercise.final > div.garden {
-  margin-top: 160px;
+  margin: 160px 100px 0;
 }
 
 .exercise > div.description {
@@ -35,6 +58,7 @@ body {
   padding: 20px;
   font-family: "Permanent Marker", cursive;
   margin-bottom: 50px;
+  margin-right: 50px;
 }
 
 div.description p {
@@ -56,6 +80,16 @@ div.description h2 {
   font-size: 2rem;
   text-decoration: underline;
   margin-bottom: 10px;
+}
+
+.description-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-btn > a {
+  margin: 0 15px;
 }
 
 .exercise > div.garden {
@@ -154,7 +188,7 @@ header > h1 {
   border-radius: 15px;
 }
 
-section {
+main {
   margin-bottom: 50px;
 }
 
@@ -186,11 +220,7 @@ footer > a {
     margin-bottom: 0;
   }
 
-  .final > div.garden {
-    margin-top: 100px;
-  }
-
-  section {
-    margin-bottom: 150px;
+  .container {
+    min-width: 1400px;
   }
 }
