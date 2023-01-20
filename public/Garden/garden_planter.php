@@ -18,17 +18,28 @@ include __DIR__ . '/../../src/planter_exercises.php';
 
 $instructions = json_decode(file_get_contents("./assets/planter_instructions.json"), true);
 
-$plants[1] = firstPlanter();
-$plants[2] = firstPlanter();
-$plants[3] = firstPlanter();
+for ($i = 1; $i <= count($instructions); $i++) {
+    $planterInit = 'planter' . $i;
+    if (function_exists($planterInit)) {
+        $plants[$i] = $planterInit();
+    }
+}
+
+$allowedList = ['🌻', '🌼', '🌹', '🌷', '🌺', '🌸', '🏵️', '🍀', '🌿', '☘️', '🌱', '🌴', '🌲', '🌳', ''];
 
 $stage = $_GET['stage'] ?? 1;
 
-if (count($plants[$stage]['planter']) > 5) {
-    $errors[] = '• There are too many plants in the planter !';
+$planterIsInvalid = false;
+foreach ($plants[$stage]['planter'] as $planterItem) {
+    if (!in_array($planterItem, $allowedList)) {
+        $planterIsInvalid = true;
+    }
 }
-if (mb_strlen($plants[$stage]['pot']) > 1) {
-    $errors[] = '• There are too many plants in the planter !';
+if (($planterIsInvalid) || (count($plants[$stage]['planter']) > 5)) {
+    $errors[] = '• There are too many plants in the planter, or you\'re trying to plant something strange !';
+}
+if (!in_array($plants[$stage]['pot'], $allowedList)) {
+    $errors[] = '• There are too many plants in the pot or you\'re trying to plant something strange !';
 }
 
 ?>
@@ -60,14 +71,18 @@ if (mb_strlen($plants[$stage]['pot']) > 1) {
                     <div class="soil">
                         <?php for ($i = 0; $i < count($plants[$stage]['planter']) && count($plants[$stage]['planter']) <= 5; $i++) : ?>
                             <div class="planter-plot">
-                                <?= $plants[$stage]['planter'][$i] ?? ' '; ?>
+                                <?php if (isset($plants[$stage]['planter'][$i])) {
+                                    if (in_array($plants[$stage]['planter'][$i], $allowedList)) {
+                                        echo $plants[$stage]['planter'][$i];
+                                    }
+                                } ?>
                             </div>
                         <?php endfor; ?>
                     </div>
                 </div>
                 <div class="pot border">
                     <div class="soil soil-pot">
-                        <?php if (mb_strlen($plants[$stage]['pot']) <= 1) : ?>
+                        <?php if (in_array($plants[$stage]['pot'], $allowedList)) : ?>
                             <?= $plants[$stage]['pot'] ?? ''; ?>
                         <?php endif; ?>
                     </div>
@@ -90,12 +105,29 @@ if (mb_strlen($plants[$stage]['pot']) > 1) {
                         <?php if ($stage > 1) : ?>
                             <a href="?stage=<?= $stage - 1 ?>"> <- Prev</a>
                                 <?php endif; ?>
-                                <?php if ($stage < 3) : ?>
+                                <?php if ($stage < count($instructions)) : ?>
                                     <a href="?stage=<?= $stage + 1 ?>"> Next -> </a>
                                 <?php endif; ?>
                     </div>
                 </div>
-                <p><?= $instructions[$stage] ?></p>
+                <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
+                <div class="expectations">
+                    <p>Expected : </p>
+                    <div class="mini-planter border">
+                        <div class="soil">
+                            <?php foreach ($instructions[$stage]["result"]["planter"] as $plant) : ?>
+                                <div class="mini-planter-plot">
+                                    <?= $plant ?>
+                                </div>
+                            <?php endforeach ?>
+                        </div>
+                    </div>
+                    <div class="mini-pot border">
+                        <div class="soil soil-pot">
+                            <?php echo $instructions[$stage]["result"]["pot"] ?>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </main>

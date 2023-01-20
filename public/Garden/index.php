@@ -23,14 +23,14 @@
                 <img class="arrow-link" id="ex1-link" src="../assets/img/arrow.png" alt="Magnifying glass icon" />
                 <div id="ex1-text">
                     <h2>Head to the field</h2>
-                    <p>Difficulty : ⭐ to ⭐⭐⭐⭐</p>
+                    <p>Difficulty : ⭐⭐ to ⭐⭐⭐⭐</p>
                 </div>
             </a>
             <a href="./garden_planter.php">
                 <img class="mglass-link" id="ex2-link" src="../assets/img/glass.png" alt="Magnifying glass icon" />
                 <div id="ex2-text">
                     <h2>Use the planters</h2>
-                    <p>Difficulty : ⭐ to ⭐⭐</p>
+                    <p>Difficulty : ⭐ to ⭐⭐⭐</p>
                 </div>
             </a>
         </div>
