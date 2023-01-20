@@ -122,6 +122,35 @@ footer > a {
   font-size: 100px;
 }
 
+.error-container {
+  position: absolute;
+  margin-top: -25px;
+}
+
+#error {
+  position: absolute;
+  left: -300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  min-height: 80px;
+  max-height: 160px;
+  border: 5px solid rgb(55, 55, 55);
+  background-color: rgb(200, 200, 200);
+  border-radius: 15px;
+  padding: 20px;
+  font-family: var(--text-font-garden);
+  margin-bottom: 50px;
+  gap: 10px;
+}
+
+div#error > p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
 .exercise > div.instructions {
   display: flex;
   flex-direction: column;

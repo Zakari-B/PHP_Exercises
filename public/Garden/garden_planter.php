@@ -23,7 +23,13 @@ $plants[2] = firstPlanter();
 $plants[3] = firstPlanter();
 
 $stage = $_GET['stage'] ?? 1;
-$garden = $gardens[$stage] ?? [];
+
+if (count($plants[$stage]['planter']) > 5) {
+    $errors[] = '• There are too many plants in the planter !';
+}
+if (mb_strlen($plants[$stage]['pot']) > 1) {
+    $errors[] = '• There are too many plants in the planter !';
+}
 
 ?>
 
@@ -69,6 +75,15 @@ $garden = $gardens[$stage] ?? [];
             </div>
 
             <div class="instructions">
+                <?php if (isset($errors)) : ?>
+                    <div class="error-container">
+                        <div id="error">
+                            <?php foreach ($errors as $error) : ?>
+                                <p><?= $error ?></p>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
                 <div class="instructions-top">
                     <h2>Stage <?= $stage ?></h2>
                     <div class="nav-btn">
