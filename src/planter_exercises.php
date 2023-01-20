@@ -12,8 +12,30 @@
 
 function firstPlanter(): array
 {
-    $planter = ['🌳', '', '🌳', '', '🌳'];
-    $pot = '🌳';
+    $planter = [];
+    $pot = '';
+
+    return [
+        'planter' => $planter,
+        'pot' => $pot,
+    ];
+}
+
+function secondPlanter(): array
+{
+    $planter = [];
+    $pot = '';
+
+    return [
+        'planter' => $planter,
+        'pot' => $pot,
+    ];
+}
+
+function thirdPlanter(): array
+{
+    $planter = [];
+    $pot = '';
 
     return [
         'planter' => $planter,

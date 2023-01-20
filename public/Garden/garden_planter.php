@@ -16,7 +16,11 @@
 
 include __DIR__ . '/../../src/planter_exercises.php';
 
+$instructions = json_decode(file_get_contents("./assets/planter_instructions.json"), true);
+
 $plants[1] = firstPlanter();
+$plants[2] = firstPlanter();
+$plants[3] = firstPlanter();
 
 $stage = $_GET['stage'] ?? 1;
 $garden = $gardens[$stage] ?? [];
@@ -71,12 +75,12 @@ $garden = $gardens[$stage] ?? [];
                         <?php if ($stage > 1) : ?>
                             <a href="?stage=<?= $stage - 1 ?>"> <- Prev</a>
                                 <?php endif; ?>
-                                <?php if ($stage < 6) : ?>
+                                <?php if ($stage < 3) : ?>
                                     <a href="?stage=<?= $stage + 1 ?>"> Next -> </a>
                                 <?php endif; ?>
                     </div>
                 </div>
-                <p>HELLO WORLD !</p>
+                <p><?= $instructions[$stage] ?></p>
             </div>
 
         </main>
