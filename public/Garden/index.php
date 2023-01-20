@@ -16,27 +16,27 @@
     <main class="garden-main">
         <header>
             <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
-            <h1>The garden</h1>
+            <h1>The planter</h1>
         </header>
         <div class="content">
             <a href="./garden_field.php">
                 <img class="arrow-link" id="ex1-link" src="../assets/img/arrow.png" alt="Magnifying glass icon" />
                 <div id="ex1-text">
                     <h2>Head to the field</h2>
-                    <p>Difficulty : ⭐ to ⭐⭐⭐⭐</p>
+                    <p>Difficulty : ⭐⭐ to ⭐⭐⭐⭐</p>
                 </div>
             </a>
-            <a href="#">
+            <a href="./garden_planter.php">
                 <img class="mglass-link" id="ex2-link" src="../assets/img/glass.png" alt="Magnifying glass icon" />
                 <div id="ex2-text">
                     <h2>Use the planters</h2>
-                    <p>Difficulty : ⭐ to ⭐⭐</p>
+                    <p>Difficulty : ⭐ to ⭐⭐⭐</p>
                 </div>
             </a>
         </div>
         <footer>
             <a href="/contributors.html">
-                <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Github profile link" />
+                <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Link to contributors list" />
             </a>
         </footer>
     </main>

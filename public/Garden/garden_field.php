@@ -4,7 +4,7 @@
 //// DO NOT TOUCH THIS FILE ////
 /*****************************/
 
-include __DIR__ . '/../../src/garden_exercises.php';
+include __DIR__ . '/../../src/field_exercises.php';
 
 $gardens[1] = plantFirstGarden();
 $gardens[2] = plantSecondGarden();
@@ -46,7 +46,6 @@ $garden = $gardens[$stage] ?? [];
             <h2>Stage <?= $stage ?></h2>
             <div class="nav-btn">
               <?php if ($stage > 1) : ?>
-
                 <a href="?stage=<?= $stage - 1 ?>"> <- Prev</a>
                   <?php endif; ?>
                   <?php if ($stage < 6) : ?>
@@ -91,7 +90,7 @@ $garden = $gardens[$stage] ?? [];
     </main>
     <footer>
       <a href="/contributors.html">
-        <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Github profile link" />
+        <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Link to contributors list" />
       </a>
     </footer>
   </div>

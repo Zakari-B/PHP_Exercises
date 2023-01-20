@@ -26,14 +26,6 @@ body {
   background-image: url("./img/grassbg.jpg");
 }
 
-.btn {
-  background-color: var(--light);
-  color: var(--dark);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
 .exercise {
   display: flex;
   flex-direction: column;

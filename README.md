@@ -11,6 +11,12 @@ Exercises in this section would be stuff like Caesar cipher or a roman numerals 
 
 ## Garden
 
+### Planter
+
+Trains : Creating and manipulating one dimensional arrays, using common array methods.
+
+### Field
+
 Trains : nested loops, conditions
 
 In this exercise, you will be provided with a short description and an image of what the garden is expected to look like, and you will have to write the code to make it happen.
