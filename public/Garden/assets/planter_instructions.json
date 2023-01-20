@@ -1,5 +1,79 @@
 {
-    "1": "First exercise description",
-    "2": "Second exercise description",
-    "3": "Third exercise description"
+    "1": {
+        "desc": "Open the file 'src/planter_exercises'. You will find an array named planter linked to the planter you can see above.\nThis planter has 5 slots, you will get an error if you try to add more plants.\nNow go ahead and manually edit the array to sow a seed in the first slot.",
+        "result": {
+            "planter": ["🌱", "", "", "", ""],
+            "pot": ""
+        }
+    },
+    "2": {
+        "desc": "Same as what you did previously, except this time we want to add a seed to the second slot.",
+        "result": {
+            "planter": ["🌱", "🌱", "", "", ""],
+            "pot": ""
+        }
+    },
+    "3": {
+        "desc" : "Now push a third plant into the planter array without modifying it manually.",
+        "result": {
+            "planter": ["🌱", "🌱", "🌱", "", ""],
+            "pot": ""
+        }
+    },
+    "4": {
+        "desc" : "Add a plant to the fifth slot but leave the fourth one empty.",
+        "result": {
+            "planter": ["🌱", "🌱", "🌱", "", "🌱"],
+            "pot": ""
+        }
+    },
+    "5": {
+        "desc" : "Now fill the entire planter, but this time with a loop.",
+        "result": {
+            "planter": ["🌱", "🌱", "🌱", "🌱", "🌱"],
+            "pot": ""
+        }
+    },
+    "6": {
+        "desc" : "You have two other planters, the first one containing 2 plants, the second one containing 3. You must find the array method to put both of those arrays in your planter.",
+        "result": {
+            "planter": ["🌱", "🌱", "🌱", "🌱", "🌱"],
+            "pot": ""
+        }
+    },
+    "7": {
+        "desc" : "That flower should be in the pot, so let's use it. Remove the last element from the planter and add it to the pot with the right array method.",
+        "result": {
+            "planter": ["🌱", "🌱", "🌱", "🌱", ""],
+            "pot": "🌸"
+        }
+    },
+    "8": {
+        "desc" : "Same exercise as the previous one, but this time you need to remove the first element from the planter and add it to the pot.\n(Hint: you can use two different methods with very similar names)",
+        "result": {
+            "planter": ["", "🌱", "🌱", "🌱", "🌱"],
+            "pot": "🌸"
+        }
+    },
+    "9": {
+        "desc" : "There is a rose among the tulips. Replace it with a tulip with an array method.",
+        "result": {
+            "planter": ["🌷", "🌷", "🌷", "🌷", "🌷"],
+            "pot": ""
+        }
+    },
+    "10": {
+        "desc" : "The flower arrangement looks nice but... I think it would look better if we turned it around with the appropriate array method.",
+        "result": {
+            "planter": ["🏵️", "🌸", "🌷", "🌹", "🌼"],
+            "pot": ""
+        }
+    },
+    "11": {
+        "desc" : "Plant the flowers you want to plant. However, if there is at least one 'Rosette' in the planter, there must be a sunflower in the pot.",
+        "result": {
+            "planter": ["🏵️", "🌱", "🌱", "🌱", "🌱"],
+            "pot": "🌻"
+        }
+    }
 }
