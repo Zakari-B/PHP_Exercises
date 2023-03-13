@@ -35,7 +35,7 @@ $garden = $gardens[$stage] ?? [];
   <div class="container">
     <header>
       <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
-      <h1>The field</h1>
+      <h1>Field</h1>
     </header>
     <main class="exercise <?php if ($stage === '5') {
                             echo "final";
