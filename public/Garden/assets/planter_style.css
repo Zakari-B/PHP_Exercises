@@ -60,7 +60,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 3.75rem;
   color: rgb(35, 35, 35);
   background-color: rgba(200, 200, 200, 0.5);
 }
@@ -69,11 +69,6 @@ footer > a {
   margin-left: 15px;
   display: flex;
   align-items: center;
-}
-
-.container {
-  min-width: 1300px;
-  background-image: url("./img/grassbg.jpg");
 }
 
 .content {
