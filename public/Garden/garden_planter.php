@@ -55,7 +55,7 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-    <title>Garden</title>
+    <title>Planter</title>
 </head>
 
 <body>
