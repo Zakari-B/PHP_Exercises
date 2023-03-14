@@ -5,15 +5,19 @@ To start, use `php -S localhost:8000 -t public` in the root folder of this proje
 
 ## Archeology
 
+### Mural
+
 Trains : string manipulation, logical thinking
 
-Exercises in this section would be stuff like Caesar cipher or a roman numerals converter.
+In this exercise, an encrypted message will be displayed (and how exactly it was encrypted), and you will have to write the required algorithms to decrypt that message.
 
 ## Garden
 
 ### Planter
 
-Trains : Creating and manipulating one dimensional arrays, using common array methods.
+Trains : manipulating one dimensional arrays, using common array methods.
+
+In the planter exercise, you will get a planter (single-dimension array) and a pot (one-character string) and will need to manipulate them to reproduce the results given in the instructions.
 
 ### Field
 
