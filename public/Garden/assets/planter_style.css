@@ -27,7 +27,7 @@ body {
   min-width: 1400px;
   max-width: 1920px;
   aspect-ratio: 16/10;
-  border: 6px solid rgba(0, 150, 0, 0.75);
+  border: 2px solid rgba(0, 150, 0, 0.75);
 }
 
 .logo {
