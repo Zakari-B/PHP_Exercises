@@ -1,6 +1,6 @@
 {
     "1": {
-        "desc": "Open the file 'src/planter_exercises'. You will find an array named planter linked to the planter you can see above.\nThis planter has 5 slots, you will get an error if you try to add more plants.\nNow go ahead and manually edit the array to sow a seed in the first slot.",
+        "desc": "Open the file 'src/planterExercises'. You will functions numbered for the stage they correspond to, so you will first start with the function planter1.\nYou will see an array named planter linked to the planter you can see above. This planter has 5 slots, you will get an error if you try to add more plants.\nNow go ahead and manually edit the array to sow a seed (🌱) in the first slot.",
         "result": {
             "planter": ["🌱", "", "", "", ""],
             "pot": ""
@@ -14,7 +14,7 @@
         }
     },
     "3": {
-        "desc" : "Now push a third plant into the planter array without modifying it manually.",
+        "desc" : "Now use a php array method to 'push' a third plant to the end of the planter array without modifying it manually.",
         "result": {
             "planter": ["🌱", "🌱", "🌱", "", ""],
             "pot": ""
@@ -28,7 +28,7 @@
         }
     },
     "5": {
-        "desc" : "Now fill the entire planter, but this time with a loop.",
+        "desc" : "Now fill the entire planter, but this time by using a php loop.",
         "result": {
             "planter": ["🌱", "🌱", "🌱", "🌱", "🌱"],
             "pot": ""

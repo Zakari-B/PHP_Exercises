@@ -4,7 +4,7 @@
 //// DO NOT TOUCH THIS FILE ////
 /*****************************/
 
-include __DIR__ . '/../../src/field_exercises.php';
+include __DIR__ . '/../../src/fieldExercises.php';
 
 $gardens[1] = plantFirstGarden();
 $gardens[2] = plantSecondGarden();
@@ -28,6 +28,7 @@ $garden = $gardens[$stage] ?? [];
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
   <title>Garden</title>
 </head>
 
@@ -36,6 +37,7 @@ $garden = $gardens[$stage] ?? [];
     <header>
       <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
       <h1>Field</h1>
+      <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
     </header>
     <main class="exercise <?php if ($stage === '5') {
                             echo "final";

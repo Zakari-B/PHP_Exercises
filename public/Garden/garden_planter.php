@@ -14,7 +14,7 @@
 // 🍀 Four Leaf Clover
 /*************/
 
-include __DIR__ . '/../../src/planter_exercises.php';
+include __DIR__ . '/../../src/planterExercises.php';
 
 $instructions = json_decode(file_get_contents("./assets/planter_instructions.json"), true);
 
@@ -25,7 +25,7 @@ for ($i = 1; $i <= count($instructions); $i++) {
     }
 }
 
-$allowedList = ['🌻', '🌼', '🌹', '🌷', '🌺', '🌸', '🏵️', '🍀', '🌿', '☘️', '🌱', '🌴', '🌲', '🌳', ''];
+$allowedList = ['🌻', '🌼', '🌹', '🌷', '🌺', '🌸', '🏵️', '🍀', '🌿', '☘️', '🌱', '🌴', '🌲', '🌳', '', ' '];
 
 $stage = $_GET['stage'] ?? 1;
 
@@ -55,6 +55,7 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <title>Planter</title>
 </head>
 
@@ -63,19 +64,16 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
         <header>
             <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
             <h1>The planter</h1>
+            <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
         </header>
         <main class="exercise">
 
             <div class="content">
                 <div class="planter border">
                     <div class="soil">
-                        <?php for ($i = 0; $i < count($plants[$stage]['planter']) && count($plants[$stage]['planter']) <= 5; $i++) : ?>
+                        <?php for ($i = 0; $i < 5 && $planterIsInvalid === false; $i++) : ?>
                             <div class="planter-plot">
-                                <?php if (isset($plants[$stage]['planter'][$i])) {
-                                    if (in_array($plants[$stage]['planter'][$i], $allowedList)) {
-                                        echo $plants[$stage]['planter'][$i];
-                                    }
-                                } ?>
+                                <?= $plants[$stage]['planter'][$i] ?? '' ?>
                             </div>
                         <?php endfor; ?>
                     </div>
@@ -131,8 +129,8 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
             </div>
 
         </main>
-        <img src="./assets/img/cat3.png" alt="A cat" class="cat" />
         <footer>
+            <img src="./assets/img/cat3.png" alt="A cat" class="cat" />
             <a href="/contributors.html">
                 <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Link to contributors list" />
             </a>
