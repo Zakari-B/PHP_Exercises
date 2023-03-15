@@ -1,20 +1,32 @@
 @import url("../../assets/reset.css");
 @import url("../../assets/vars.css");
+@import url("../../assets/rainboweffect.css");
+
+:root {
+  --buttonSize: 100px;
+  --buttonBorderRadius: 60px;
+}
 
 body {
-  background-color: var(--bodybg);
+  background: url("./img/earth.jpg") repeat;
+  backdrop-filter: brightness(75%);
+  min-height: 100vh;
 }
 
 .garden-main {
+  border: 2px solid rgba(250, 150, 60, 0.75);
   position: relative;
   display: flex;
   flex-direction: column;
-  width: var(--GardenContentWidth);
-  height: var(--GardenContentHeight);
+  justify-content: space-between;
+  width: calc(var(--GardenContentWidth) * 1.33);
+  height: calc(var(--GardenContentHeight) * 1.33);
+  aspect-ratio: 3/2;
   margin: auto;
   background-image: url("./img/gardenbg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: -2;
 }
 
 header {
@@ -38,9 +50,7 @@ header > h1 {
 }
 
 div.content {
-  height: calc(
-    var(--GardenContentHeight) - var(--navHeight) - var(--footerHeight)
-  );
+  height: calc(100% - var(--navHeight) - var(--footerHeight));
   position: relative;
 }
 
@@ -65,11 +75,11 @@ footer > a {
 
 .mglass-link,
 .arrow-link {
-  height: 100px;
-  width: 100px;
+  height: var(--buttonSize);
+  width: var(--buttonSize);
   padding: 15px;
   border: 3px solid rgb(75, 75, 75);
-  border-radius: 60px;
+  border-radius: var(--buttonBorderRadius);
   background-color: rgba(200, 200, 200, 0.25);
 }
 
@@ -100,9 +110,8 @@ p {
 
 #ex1-link {
   position: absolute;
-  bottom: 310px;
+  bottom: 440px;
   right: 30px;
-  transform: rotate(330deg);
 }
 
 #ex1-link:hover ~ #ex1-text {
@@ -112,7 +121,7 @@ p {
 #ex1-text {
   display: none;
   position: absolute;
-  bottom: 305px;
+  bottom: 445px;
   right: 115px;
   font-size: 2rem;
   padding: 15px;
@@ -123,8 +132,8 @@ p {
 
 #ex2-link {
   position: absolute;
-  bottom: 230px;
-  left: 210px;
+  bottom: 340px;
+  left: 300px;
 }
 
 #ex2-link:hover ~ #ex2-text {
@@ -134,8 +143,8 @@ p {
 #ex2-text {
   display: none;
   position: absolute;
-  bottom: 245px;
-  left: 295px;
+  bottom: 345px;
+  left: 385px;
   font-size: 2rem;
   padding: 15px;
   border: 3px solid rgb(75, 75, 75);
