@@ -51,7 +51,6 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../assets/exercise.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="/Garden/assets/planter_style.css" media="screen" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,12 +69,10 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
 
         <main class="exercise">
             <?php if (isset($errors)) : ?>
-                <div class="error-container">
-                    <div id="error">
-                        <?php foreach ($errors as $error) : ?>
-                            <p><?= $error ?></p>
-                        <?php endforeach; ?>
-                    </div>
+                <div class="error">
+                    <?php foreach ($errors as $error) : ?>
+                        <p><?= $error ?></p>
+                    <?php endforeach; ?>
                 </div>
             <?php endif; ?>
 
@@ -90,7 +87,9 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
 
                 <div class="planter pot">
                     <div class="plot">
-                        <?= $plants[$stage]['pot'] ?? ''; ?>
+                        <?php if ($planterIsInvalid === false) : ?>
+                            <?= $plants[$stage]['pot'] ?? ''; ?>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>
@@ -102,7 +101,8 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
 
                     <div class="nav-btn">
                         <?php if ($stage > 1) : ?>
-                            <a href="?stage=<?= $stage - 1 ?>"> < Prev</a>
+                            <a href="?stage=<?= $stage - 1 ?>">
+                                < Prev</a>
                                 <?php endif; ?>
                                 <?php if ($stage < count($instructions)) : ?>
                                     <a href="?stage=<?= $stage + 1 ?>"> Next > </a>

@@ -1,52 +1,68 @@
 @import url("../../assets/reset.css");
 @import url("../../assets/vars.css");
+@import url("../../assets/headerAndFooter.css");
+
+:root {
+  --title-font: var(--title-font-garden);
+  --title-color: var(--title-color-garden);
+}
 
 body {
   background-image: url("./img/grassbg.jpg");
+  min-width: 800px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 main.exercise {
   --content-width: 1100px;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6rem;
   width: clamp(360px, 100%, var(--content-width));
-  margin:auto;
+  margin: auto;
 }
 
 .content {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin:auto;
+  margin: auto;
   width: 100%;
   justify-content: space-between;
 }
 
 .planter {
   perspective: 1500px;
-  --width: min(700px, 100%);
+  --width: min(800px, 100%);
   --height: 200px;
   --plot-number: 5;
   display: grid;
   grid-template-columns: repeat(var(--plot-number), 1fr);
   width: var(--width);
   height: var(--height);
-  border-image: url('img/clay.webp') 10 / calc(var(--height) / 10);
+  border-image: url("./img/clay.webp") 10 / calc(var(--height) / 10);
+  border-style: solid;
   background-image: url("./img/soilbg.jpg");
   position: relative;
   box-shadow: 0 25px 15px inset rgba(0, 0, 0, 0.5);
 }
 
 .planter::after {
-  content:"";
+  content: "";
   background-image: url("./img/clay.webp");
   height: calc(var(--height) / 2);
   width: 100%;
   position: absolute;
-  left:0;
+  left: 0;
   bottom: 0;
   transform: translateY(calc(var(--height) / 2)) rotateX(-60deg);
   transform-origin: top;
@@ -71,19 +87,18 @@ main.exercise {
   text-shadow: 0.5rem 0.5rem 10px rgba(0, 0, 0, 0.5);
 }
 
-.error-container {
+.error {
+  --error-width: 250px;
   position: absolute;
-  margin-top: -25px;
-}
-
-#error {
-  position: absolute;
-  left: -300px;
+  top: 33%;
+  left: calc(
+    50% - var(--error-width) / 2
+  ); /* Middle of screen minus half own width to center it*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 250px;
+  width: var(--error-width);
   min-height: 80px;
   max-height: 280px;
   border: 5px solid rgb(55, 55, 55);
@@ -91,11 +106,11 @@ main.exercise {
   border-radius: 15px;
   padding: 20px;
   font-family: var(--text-font-garden);
-  margin-bottom: 50px;
   gap: 10px;
+  z-index: 1;
 }
 
-div#error>p {
+.error > p {
   font-size: 1.1rem;
   margin-bottom: 0;
   color: rgb(200, 0, 0);
@@ -107,7 +122,7 @@ div#error>p {
   flex-direction: column;
   border: 5px solid rgb(55, 55, 55);
   background-color: rgba(200, 200, 200, 0.9);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 3rem;
   font-family: var(--text-font-garden);
 }
@@ -133,16 +148,15 @@ div#error>p {
   display: flex;
   gap: 1rem;
   align-items: center;
-
 }
 
 .mini {
   --width: 400px;
-  --height:100px;
+  --height: 100px;
 }
 
 .mini.pot {
-  --width: 100px; 
+  --width: 100px;
 }
 
 div.expectations > p {
@@ -159,7 +173,7 @@ div.expectations > p {
 .nav-btn > a {
   font-size: 1.3rem;
   border: 2px solid black;
-  background-color: rgb(200, 200, 200);;
+  background-color: rgb(200, 200, 200);
   color: black;
   padding: 0.5rem;
   text-decoration: none;
