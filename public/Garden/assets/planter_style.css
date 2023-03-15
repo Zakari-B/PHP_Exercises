@@ -1,9 +1,10 @@
 @import url("../../assets/reset.css");
 @import url("../../assets/vars.css");
 
-#home {
+#home,
+#back {
   --size: 75px;
-  margin-left: calc(0px - var(--size));
+  margin: 0 10px;
   height: var(--size);
   width: var(--size);
   padding: 15px;
@@ -15,12 +16,18 @@
 body {
   background-color: rgba(10, 10, 10, 0.9);
   position: relative;
+  background-image: url("./img/grassbg.jpg");
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: auto;
-  width: 1400px;
-  background-image: url("./img/grassbg.jpg");
+  min-width: 1400px;
+  max-width: 1920px;
+  aspect-ratio: 16/10;
+  border: 2px solid rgba(0, 150, 0, 0.75);
 }
 
 .logo {
@@ -33,7 +40,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: 3rem;
 }
 
@@ -42,7 +49,7 @@ header > h1 {
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  font-family: "Permanent Marker", cursive;
+  font-family: var(--title-font-garden);
   line-height: 4rem;
   padding: 1rem;
   color: rgb(100, 200, 20);
@@ -57,10 +64,11 @@ main.exercise {
 }
 
 footer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 3.75rem;
+  height: var(--footerHeight);
   color: rgb(35, 35, 35);
   background-color: rgba(200, 200, 200, 0.5);
 }
@@ -144,6 +152,7 @@ footer > a {
 div#error > p {
   font-size: 1.1rem;
   margin-bottom: 0;
+  color: rgb(200, 0, 0);
 }
 
 .exercise > div.instructions {
@@ -229,7 +238,7 @@ div.expectations > p {
 
 img.cat {
   position: absolute;
-  bottom: 52px;
-  left: 75px;
+  bottom: calc(var(--footerHeight) - 0.5rem);
+  left: 10px;
   height: 100px;
 }

@@ -5,10 +5,11 @@
   --GardenContentWidth: 1200px;
   --ArcheologyContentHeight: 1080px;
   --ArcheologyContentWidth: 1920px;
-  --navHeight: 120px;
-  --footerHeight: 60px;
+  --navHeight: 7.25rem;
+  --footerHeight: 3.75rem;
   --text-font-archeology: "Luxurious Roman", cursive;
-  --text-font-garden: "Permanent Marker", cursive;
+  --title-font-garden: "Permanent Marker", cursive;
+  --text-font-garden: "Varela Round", sans-serif;
   --bodybg: rgba(10, 10, 10, 0.9);
   --dark: rgb(20, 20, 20);
   --intermediate: rgb(125, 125, 125);
