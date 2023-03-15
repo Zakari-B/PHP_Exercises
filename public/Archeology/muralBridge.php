@@ -1,3 +1,3 @@
 <?php
 
-require __DIR__ . '/../../src/mural_exercises.php';
+require __DIR__ . '/../../src/muralExercises.php';

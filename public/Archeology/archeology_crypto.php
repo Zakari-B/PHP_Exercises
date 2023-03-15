@@ -39,6 +39,7 @@ $stage = $_GET['stage'] ?? '1';
             <header>
                 <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
                 <h1>Mural</h1>
+                <a id="back" href="/Archeology/"><img src="../assets/img/back.png" alt="Home icon" /></a>
             </header>
             <main class="exercise">
 

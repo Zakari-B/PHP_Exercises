@@ -3,12 +3,13 @@
 
 :root {
   --mainContainerPadding: 50px;
-  --muralPageHeight: 960px;
+  --muralPageHeight: 1080px;
 }
 
-#home {
+#home,
+#back {
   --size: 75px;
-  margin-left: calc(0px - var(--size));
+  margin: 0 10px;
   height: var(--size);
   width: var(--size);
   padding: 15px;
@@ -20,14 +21,14 @@
 body {
   background-color: rgba(10, 10, 10, 0.9);
   position: relative;
-  max-width: 1600px;
+  max-width: 1920px;
   max-height: var(--muralPageHeight);
   margin: auto;
 }
 
 .container {
   margin: auto;
-  width: 1600px;
+  width: 1920px;
   height: var(--muralPageHeight);
   background-image: url("./img/wall.jpg");
 }
@@ -144,8 +145,9 @@ div.instructions p {
   left: calc(0px - var(--borderWidth));
   width: calc(100% + 2 * var(--borderWidth));
   height: calc(100% + 2 * var(--borderWidth));
+  /* Half of (total width - container width) */
   background: radial-gradient(
-    circle var(--light) at calc(var(--cursorX) - 400px)
+    circle var(--light) at calc(var(--cursorX) - ((1920px - 800px) / 2))
       calc(var(--cursorY) - var(--navHeight) - var(--mainContainerPadding)),
     rgba(0, 0, 0, var(--innerLight)) 0%,
     rgba(0, 0, 0, var(--centerLight)) 80%,
