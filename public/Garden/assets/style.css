@@ -1,0 +1,106 @@
+@import url("../../assets/reset.css");
+@import url("../../assets/vars.css");
+@import url("../../assets/headerAndFooter.css");
+@import url("../../assets/rainboweffect.css");
+
+:root {
+  --title-font: var(--title-font-garden);
+  --title-color: var(--title-color-garden);
+  --buttonSize: 100px;
+  --buttonBorderRadius: 60px;
+}
+
+body {
+  background: url("./img/earth.jpg") repeat;
+  backdrop-filter: brightness(75%);
+  min-height: 100vh;
+}
+
+.garden-main {
+  border: 2px solid rgba(250, 150, 60, 0.75);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(var(--GardenContentWidth) * 1.33);
+  height: calc(var(--GardenContentHeight) * 1.33);
+  aspect-ratio: 3/2;
+  margin: auto;
+  background-image: url("./img/gardenbg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+div.content {
+  height: calc(100% - var(--navHeight) - var(--footerHeight));
+  position: relative;
+}
+
+.mglass-link,
+.arrow-link {
+  height: var(--buttonSize);
+  width: var(--buttonSize);
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: var(--buttonBorderRadius);
+  background-color: rgba(200, 200, 200, 0.25);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+#ex1-link {
+  position: absolute;
+  bottom: 440px;
+  right: 30px;
+}
+
+#ex1-link:hover ~ #ex1-text {
+  display: block;
+}
+
+#ex1-text {
+  display: none;
+  position: absolute;
+  bottom: 445px;
+  right: 115px;
+  font-size: 2rem;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: 15px;
+  background-color: rgba(200, 200, 200, 0.7);
+}
+
+#ex2-link {
+  position: absolute;
+  bottom: 340px;
+  left: 300px;
+}
+
+#ex2-link:hover ~ #ex2-text {
+  display: block;
+}
+
+#ex2-text {
+  display: none;
+  position: absolute;
+  bottom: 345px;
+  left: 385px;
+  font-size: 2rem;
+  padding: 15px;
+  border: 3px solid rgb(75, 75, 75);
+  border-radius: 15px;
+  background-color: rgba(200, 200, 200, 0.7);
+}
