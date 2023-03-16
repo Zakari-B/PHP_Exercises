@@ -1,0 +1,54 @@
+#home,
+#back {
+  --size: 75px;
+  margin: 0 10px;
+  height: var(--size);
+  width: var(--size);
+  padding: 15px;
+  border: 3px solid rgb(25, 25, 25);
+  border-radius: 60px;
+  background-color: rgba(200, 200, 200, 0.75);
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
+header {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+header > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-family: var(--title-font);
+  line-height: 4rem;
+  padding: 1rem;
+  color: var(--title-color);
+  background-color: rgba(55, 55, 55, 0.5);
+  border-radius: 15px;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--footerHeight);
+  color: rgb(35, 35, 35);
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+footer > a {
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}

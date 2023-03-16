@@ -1,21 +1,12 @@
 @import url("../../assets/reset.css");
 @import url("../../assets/vars.css");
+@import url("../../assets/headerAndFooter.css");
 
 :root {
   --mainContainerPadding: 50px;
   --muralPageHeight: 1080px;
-}
-
-#home,
-#back {
-  --size: 75px;
-  margin: 0 10px;
-  height: var(--size);
-  width: var(--size);
-  padding: 15px;
-  border: 3px solid rgb(25, 25, 25);
-  border-radius: 60px;
-  background-color: rgba(200, 200, 200, 0.75);
+  --title-font: var(--title-font-archeology);
+  --title-color: var(--title-color-archeology);
 }
 
 body {
@@ -33,51 +24,12 @@ body {
   background-image: url("./img/wall.jpg");
 }
 
-.logo {
-  height: 40px;
-  width: 40px;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--navHeight);
-}
-
-header > h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  font-family: var(--text-font-archeology);
-  line-height: 4rem;
-  padding: 1rem;
-  color: rgb(200, 200, 200);
-  background-color: rgba(35, 35, 35, 0.6);
-  border-radius: 15px;
-}
-
 main.exercise {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: calc(var(--muralPageHeight) - var(--navHeight) - var(--footerHeight));
   padding-top: var(--mainContainerPadding);
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: var(--footerHeight);
-  color: var(--dark);
-  background-color: rgba(200, 200, 200, 0.5);
-}
-
-footer > a {
-  display: flex;
-  align-items: center;
 }
 
 .exercise > div.instructions {
@@ -109,6 +61,7 @@ div.instructions-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 div.instructions p {
@@ -155,8 +108,23 @@ div.instructions p {
   );
 }
 
+.nav-btn {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .nav-btn > a {
-  margin: 0 15px;
+  font-size: 1.3rem;
+  border: 2px solid black;
+  background-color: rgb(200, 200, 200);
+  color: black;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+.nav-btn > a:hover {
+  filter: brightness(110%);
 }
 
 .torch {

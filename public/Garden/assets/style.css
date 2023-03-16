@@ -1,8 +1,11 @@
 @import url("../../assets/reset.css");
 @import url("../../assets/vars.css");
+@import url("../../assets/headerAndFooter.css");
 @import url("../../assets/rainboweffect.css");
 
 :root {
+  --title-font: var(--title-font-garden);
+  --title-color: var(--title-color-garden);
   --buttonSize: 100px;
   --buttonBorderRadius: 60px;
 }
@@ -29,48 +32,9 @@ body {
   z-index: -2;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--navHeight);
-}
-
-header > h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  font-family: "Permanent Marker", cursive;
-  line-height: 4rem;
-  padding: 1rem;
-  color: rgb(200, 200, 200);
-  background-color: rgba(35, 35, 35, 0.6);
-  border-radius: 15px;
-}
-
 div.content {
   height: calc(100% - var(--navHeight) - var(--footerHeight));
   position: relative;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: var(--footerHeight);
-  color: var(--dark);
-  background-color: rgba(200, 200, 200, 0.5);
-}
-
-footer > a {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 40px;
-  width: 40px;
 }
 
 .mglass-link,
@@ -81,17 +45,6 @@ footer > a {
   border: 3px solid rgb(75, 75, 75);
   border-radius: var(--buttonBorderRadius);
   background-color: rgba(200, 200, 200, 0.25);
-}
-
-#home {
-  --size: 75px;
-  margin-left: calc(0px - var(--size));
-  height: var(--size);
-  width: var(--size);
-  padding: 15px;
-  border: 3px solid var(--dark);
-  border-radius: 60px;
-  background-color: rgba(200, 200, 200, 0.75);
 }
 
 a {

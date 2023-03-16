@@ -66,62 +66,62 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
             <h1>The planter</h1>
             <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
         </header>
+
         <main class="exercise">
+            <?php if (isset($errors)) : ?>
+                <div class="error">
+                    <?php foreach ($errors as $error) : ?>
+                        <p><?= $error ?></p>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
 
             <div class="content">
-                <div class="planter border">
-                    <div class="soil">
-                        <?php for ($i = 0; $i < 5 && $planterIsInvalid === false; $i++) : ?>
-                            <div class="planter-plot">
-                                <?= $plants[$stage]['planter'][$i] ?? '' ?>
-                            </div>
-                        <?php endfor; ?>
-                    </div>
+                <div class="planter">
+                    <?php for ($i = 0; $i < 5 && $planterIsInvalid === false; $i++) : ?>
+                        <div class="plot">
+                            <?= $plants[$stage]['planter'][$i] ?? '' ?>
+                        </div>
+                    <?php endfor; ?>
                 </div>
-                <div class="pot border">
-                    <div class="soil soil-pot">
-                        <?php if (in_array($plants[$stage]['pot'], $allowedList)) : ?>
+
+                <div class="planter pot">
+                    <div class="plot">
+                        <?php if ($planterIsInvalid === false) : ?>
                             <?= $plants[$stage]['pot'] ?? ''; ?>
-                        <?php endif; ?>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>
 
             <div class="instructions">
-                <?php if (isset($errors)) : ?>
-                    <div class="error-container">
-                        <div id="error">
-                            <?php foreach ($errors as $error) : ?>
-                                <p><?= $error ?></p>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
+
                 <div class="instructions-top">
                     <h2>Stage <?= $stage ?></h2>
+
                     <div class="nav-btn">
                         <?php if ($stage > 1) : ?>
-                            <a href="?stage=<?= $stage - 1 ?>"> <- Prev</a>
+                            <a href="?stage=<?= $stage - 1 ?>">
+                                < Prev</a>
                                 <?php endif; ?>
                                 <?php if ($stage < count($instructions)) : ?>
-                                    <a href="?stage=<?= $stage + 1 ?>"> Next -> </a>
+                                    <a href="?stage=<?= $stage + 1 ?>"> Next > </a>
                                 <?php endif; ?>
                     </div>
                 </div>
                 <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
+
                 <div class="expectations">
                     <p>Expected : </p>
-                    <div class="mini-planter border">
-                        <div class="soil">
-                            <?php foreach ($instructions[$stage]["result"]["planter"] as $plant) : ?>
-                                <div class="mini-planter-plot">
-                                    <?= $plant ?>
-                                </div>
-                            <?php endforeach ?>
-                        </div>
+                    <div class="planter mini">
+                        <?php foreach ($instructions[$stage]["result"]["planter"] as $plant) : ?>
+                            <div class="plot">
+                                <?= $plant ?>
+                            </div>
+                        <?php endforeach ?>
                     </div>
-                    <div class="mini-pot border">
-                        <div class="soil soil-pot">
+                    <div class="planter mini pot">
+                        <div class="plot">
                             <?php echo $instructions[$stage]["result"]["pot"] ?>
                         </div>
                     </div>
