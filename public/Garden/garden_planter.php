@@ -14,7 +14,7 @@
 // 🍀 Four Leaf Clover
 /*************/
 
-include __DIR__ . '/../../src/planter_exercises.php';
+include __DIR__ . '/../../src/planterExercises.php';
 
 $instructions = json_decode(file_get_contents("./assets/planter_instructions.json"), true);
 
@@ -25,7 +25,7 @@ for ($i = 1; $i <= count($instructions); $i++) {
     }
 }
 
-$allowedList = ['🌻', '🌼', '🌹', '🌷', '🌺', '🌸', '🏵️', '🍀', '🌿', '☘️', '🌱', '🌴', '🌲', '🌳', ''];
+$allowedList = ['🌻', '🌼', '🌹', '🌷', '🌺', '🌸', '🏵️', '🍀', '🌿', '☘️', '🌱', '🌴', '🌲', '🌳', '', ' '];
 
 $stage = $_GET['stage'] ?? 1;
 
@@ -55,6 +55,7 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <title>Planter</title>
 </head>
 
@@ -63,67 +64,64 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
         <header>
             <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
             <h1>The planter</h1>
+            <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
         </header>
+
         <main class="exercise">
+            <?php if (isset($errors)) : ?>
+                <div class="error">
+                    <?php foreach ($errors as $error) : ?>
+                        <p><?= $error ?></p>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
 
             <div class="content">
-                <div class="planter border">
-                    <div class="soil">
-                        <?php for ($i = 0; $i < count($plants[$stage]['planter']) && count($plants[$stage]['planter']) <= 5; $i++) : ?>
-                            <div class="planter-plot">
-                                <?php if (isset($plants[$stage]['planter'][$i])) {
-                                    if (in_array($plants[$stage]['planter'][$i], $allowedList)) {
-                                        echo $plants[$stage]['planter'][$i];
-                                    }
-                                } ?>
-                            </div>
-                        <?php endfor; ?>
-                    </div>
+                <div class="planter">
+                    <?php for ($i = 0; $i < 5 && $planterIsInvalid === false; $i++) : ?>
+                        <div class="plot">
+                            <?= $plants[$stage]['planter'][$i] ?? '' ?>
+                        </div>
+                    <?php endfor; ?>
                 </div>
-                <div class="pot border">
-                    <div class="soil soil-pot">
-                        <?php if (in_array($plants[$stage]['pot'], $allowedList)) : ?>
+
+                <div class="planter pot">
+                    <div class="plot">
+                        <?php if ($planterIsInvalid === false) : ?>
                             <?= $plants[$stage]['pot'] ?? ''; ?>
-                        <?php endif; ?>
+                        <?php endif ?>
                     </div>
                 </div>
             </div>
 
             <div class="instructions">
-                <?php if (isset($errors)) : ?>
-                    <div class="error-container">
-                        <div id="error">
-                            <?php foreach ($errors as $error) : ?>
-                                <p><?= $error ?></p>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
+
                 <div class="instructions-top">
                     <h2>Stage <?= $stage ?></h2>
+
                     <div class="nav-btn">
                         <?php if ($stage > 1) : ?>
-                            <a href="?stage=<?= $stage - 1 ?>"> <- Prev</a>
+                            <a href="?stage=<?= $stage - 1 ?>">
+                                < Prev</a>
                                 <?php endif; ?>
                                 <?php if ($stage < count($instructions)) : ?>
-                                    <a href="?stage=<?= $stage + 1 ?>"> Next -> </a>
+                                    <a href="?stage=<?= $stage + 1 ?>"> Next > </a>
                                 <?php endif; ?>
                     </div>
                 </div>
                 <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
+
                 <div class="expectations">
                     <p>Expected : </p>
-                    <div class="mini-planter border">
-                        <div class="soil">
-                            <?php foreach ($instructions[$stage]["result"]["planter"] as $plant) : ?>
-                                <div class="mini-planter-plot">
-                                    <?= $plant ?>
-                                </div>
-                            <?php endforeach ?>
-                        </div>
+                    <div class="planter mini">
+                        <?php foreach ($instructions[$stage]["result"]["planter"] as $plant) : ?>
+                            <div class="plot">
+                                <?= $plant ?>
+                            </div>
+                        <?php endforeach ?>
                     </div>
-                    <div class="mini-pot border">
-                        <div class="soil soil-pot">
+                    <div class="planter mini pot">
+                        <div class="plot">
                             <?php echo $instructions[$stage]["result"]["pot"] ?>
                         </div>
                     </div>
@@ -131,8 +129,8 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
             </div>
 
         </main>
-        <img src="./assets/img/cat3.png" alt="A cat" class="cat" />
         <footer>
+            <img src="./assets/img/cat3.png" alt="A cat" class="cat" />
             <a href="/contributors.html">
                 <img class="logo" src="../assets/img/GitHub_Logo.png" alt="Link to contributors list" />
             </a>

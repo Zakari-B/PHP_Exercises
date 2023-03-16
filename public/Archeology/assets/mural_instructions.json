@@ -1,7 +1,7 @@
 {
     "1": {
         "desc": "It's a bit dark here... Start by finding and clicking the torch to get some light.",
-        "tabletMessage": "Open 'src/mural_exercises.php'.\nIn this file, you will find one function per level. The input is what you see on the mural and the return will appear on this tablet.\nYour goal is to display the decoded message on this tablet.\nOn this first mural, it looks like the text has simply been reversed.",
+        "tabletMessage": "Open 'src/muralExercises.php'.\nIn this file, you will find one function per level. The input is what you see on the mural and the return will appear on this tablet.\nYour goal is to display the decoded message on this tablet.\nOn this first mural, it looks like the text has simply been reversed.",
         "muralMessage": "ysae si level tsrif ehT"
     },
     "2": {
