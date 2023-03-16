@@ -141,7 +141,7 @@ $stage = $_GET['stage'] ?? '1';
             const params = new URLSearchParams(window.location.search)
             const stage = params.get('stage')
             const muralText = document.querySelector('.grainy_wall').textContent
-            fetch("http://localhost:8000/Archeology/muralUpdater.php", {
+            fetch("http://localhost:8000/Archeology/muralBridge.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
