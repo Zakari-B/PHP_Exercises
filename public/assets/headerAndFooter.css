@@ -16,12 +16,11 @@
 }
 
 header {
-  height: 7rem;
+  height: var(--navHeight);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  margin-bottom: 3rem;
 }
 
 header > h1 {
