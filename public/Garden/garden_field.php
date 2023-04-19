@@ -6,15 +6,22 @@
 
 include __DIR__ . '/../../src/fieldExercises.php';
 
-$gardens[1] = plantFirstGarden();
-$gardens[2] = plantSecondGarden();
-$gardens[3] = plantThirdGarden();
-$gardens[4] = plantFourthGarden();
-$gardens[5] = plantFifthGarden();
-$gardens[6] = plantSixthGarden();
+$instructions = json_decode(file_get_contents("./assets/field_instructions.json"), true);
 
 $stage = $_GET['stage'] ?? 1;
-$garden = $gardens[$stage] ?? [];
+$currentField = 'field' . $stage;
+$field = function_exists($currentField) ? $currentField() : [];
+
+$errors = [];
+if (count($field) > 10 || array_key_last($field) > 9) {
+  $errors[] = "Did you try to plant too many things ?";
+}
+foreach ($field as $row) {
+  if (count($row) > 10 || array_key_last($row) > 9) {
+    $errors[] = "Did you try to plant too many things ?";
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -39,9 +46,7 @@ $garden = $gardens[$stage] ?? [];
       <h1>Field</h1>
       <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
     </header>
-    <main class="exercise <?php if ($stage === '5') {
-                            echo "final";
-                          } ?>">
+    <main class="exercise">
       <div class="description">
         <div class="half-v">
           <div class="description-top">
@@ -50,40 +55,49 @@ $garden = $gardens[$stage] ?? [];
               <?php if ($stage > 1) : ?>
                 <a href="?stage=<?= $stage - 1 ?>"> <- Prev</a>
                   <?php endif; ?>
-                  <?php if ($stage < 6) : ?>
+                  <?php if ($stage < count($instructions)) : ?>
                     <a href="?stage=<?= $stage + 1 ?>"> Next -> </a>
                   <?php endif; ?>
             </div>
           </div>
-          <?php if ($stage <= 5) : ?>
-            <p>Reproduce the image below</p>
-          <?php else : ?>
-            <p>Freestyle stage. Challenge yourself with loops</p>
-          <?php endif; ?>
+          <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
         </div>
-        <?php if ($stage <= 5) : ?>
-          <img src="./assets/img/examples/0<?= $stage ?>.png" alt="Image of stage" class="example-img" />
+        <div class="expectations">
+          <div class="garden earth">
+            <?php foreach ($instructions[$stage]["result"] as $row) : ?>
+              <div class="garden-row">
+                <?php foreach ($row as $rowItem) : ?>
+                  <div class="garden-plot-mini">
+                    <?= $rowItem ?? ' '; ?>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            <?php endforeach ?>
+          </div>
+        </div>
+        <?php if (!empty($errors)) : ?>
+          <div class="errors">
+            <p>There is at least one problem with the field:</p>
+            <ul>
+              <?php foreach ($errors as $error) : ?>
+                <li>
+                  <p><?= $error ?></p>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
         <?php endif; ?>
       </div>
       <div class="garden earth">
-        <?php if ($stage < 5) : ?>
-          <?php for ($i = 1; $i <= $stage; $i++) : ?>
-            <img src="./assets/img/cat.png" alt="A cat" class="cat<?php echo $i ?>" />
-          <?php endfor; ?>
-        <?php endif; ?>
-        <?php if ($stage === '5') : ?>
-          <?php for ($i = 1; $i < 5; $i++) : ?>
-            <img src="./assets/img/cat.png" alt="A cat" class="cat<?php echo $i ?>" />
-          <?php endfor; ?>
-          <img src="./assets/img/cat2.png" alt="A cat" class="cat5" />
-        <?php endif; ?>
 
         <?php $rows = $columns = 10; ?>
         <?php for ($i = 0; $i < $rows; $i++) : ?>
           <div class="garden-row">
             <?php for ($j = 0; $j < $columns; $j++) : ?>
               <div class="garden-plot">
-                <?= $garden[$i][$j] ?? ' '; ?>
+                <?php if (empty($errors)) : ?>
+                  <?= $field[$i][$j] ?? ' '; ?>
+                <?php endif; ?>
               </div>
             <?php endfor; ?>
           </div>

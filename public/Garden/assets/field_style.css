@@ -29,9 +29,9 @@ main {
   margin: 50px;
 }
 
-.exercise.final > div.garden {
+/* .exercise.final > div.garden {
   margin: 160px 100px 0;
-}
+} */
 
 .exercise > div.description {
   display: flex;
@@ -51,7 +51,6 @@ main {
 
 div.description p {
   font-size: 1.2rem;
-  margin-bottom: 10px;
 }
 
 div.description > img {
@@ -62,6 +61,14 @@ div.description > img {
 
 .half-v {
   height: 50%;
+}
+
+.half-v > p {
+  margin-top: 1rem;
+}
+
+div.description {
+  gap: 1.5rem;
 }
 
 div.description h2 {
@@ -95,9 +102,16 @@ div.description h2 {
   filter: brightness(110%);
 }
 
+.expectations {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .exercise > div.garden {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 660px;
@@ -105,6 +119,33 @@ div.description h2 {
   border: 30px solid transparent;
   border-image: url("./img/plankbg.jpg") 10% round;
   margin-top: 40px;
+}
+
+.expectations > div.garden {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 330px;
+  height: 330px;
+  border: 15px solid transparent;
+  border-image: url("./img/plankbg.jpg") 10% round;
+}
+
+.errors > p {
+  font-weight: bold;
+  margin: auto 1rem;
+}
+
+.errors li {
+  list-style: circle;
+  margin: 0.5rem 2.5rem;
+}
+
+.garden-row {
+  display: flex;
+  flex-direction: row;
 }
 
 .exercise > div.garden > img.cat1 {
@@ -158,6 +199,15 @@ div.description h2 {
   align-items: center;
   width: 60px;
   height: 60px;
+}
+
+.garden-plot-mini {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
 }
 
 .earth {
