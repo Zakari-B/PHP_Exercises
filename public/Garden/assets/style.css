@@ -13,7 +13,8 @@
 body {
   background: url("./img/earth.jpg") repeat;
   backdrop-filter: brightness(75%);
-  min-height: 100vh;
+  min-height: calc(var(--GardenContentHeight) * 1.33);
+  min-width: calc(var(--GardenContentWidth) * 1.33);
 }
 
 .garden-main {
