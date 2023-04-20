@@ -31,6 +31,30 @@ main.exercise {
   margin: auto;
 }
 
+.contrastLabel {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+#contrast:not(:checked) ~ main .contrastLabel:after {
+  content: " ❌";
+}
+
+#contrast:checked ~ main .contrastLabel:after {
+  content: " ✅";
+}
+
+#contrast:checked ~ main [data-target="contrast"] {
+  background-color: black;
+  border: 1px solid white;
+}
+
+#contrast:checked ~ main [data-target="contrast"] > p {
+  color: white;
+  filter: drop-shadow(2px 2px 2px black) drop-shadow(-1px -1px 8px #ffffff8a);
+}
+
 .content {
   display: flex;
   flex-wrap: wrap;

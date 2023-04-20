@@ -29,9 +29,9 @@ main {
   margin: 50px;
 }
 
-/* .exercise.final > div.garden {
-  margin: 160px 100px 0;
-} */
+.exercise.final > div.garden {
+  margin: 160px 100px 50px;
+}
 
 .exercise > div.description {
   display: flex;
