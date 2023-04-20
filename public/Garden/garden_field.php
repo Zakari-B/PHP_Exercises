@@ -91,7 +91,30 @@ foreach ($field as $row) {
         <?php endif; ?>
       </div>
       <div class="garden earth">
-
+        <?php for ($cats = 1; $cats <= $stage; $cats++) : ?>
+          <?php if ($cats < 7 && $stage != 23) : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -112px; left: <?= ($cats - 1) * 100 ?>px" />
+          <?php endif; ?>
+          <?php if ($cats >= 7 && $cats < 13) : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat" style="right : -108px; top: <?= ($cats - 7) * 100 ?>px; transform: rotate(90deg);" />
+          <?php endif; ?>
+          <?php if ($cats >= 13 && $cats < 19) : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat" style="left : -108px; bottom: <?= ($cats - 13) * 100 ?>px; transform: rotate(-90deg);" />
+          <?php endif; ?>
+          <?php if ($cats >= 19 && $cats < 23 && $stage !== '23') : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat" style="bottom : -112px; right: <?= ($cats - 19) * 170 ?>px; transform: rotate(180deg);" />
+          <?php endif; ?>
+        <?php endfor; ?>
+        <?php if ($stage === '23') : ?>
+          <img src="./assets/img/cat2.png" alt="A cat" class="cat" style="top : -238px; left: 50; height: 250px" />
+          <?php for ($bossCats = 1; $bossCats <= 2; $bossCats++) : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -112px; left: <?= ($bossCats - 1) * 100 ?>px" />
+            <img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -112px; right: <?= ($bossCats - 1) * 100 ?>px" />
+          <?php endfor; ?>
+          <?php for ($bottomCats = 0; $bottomCats < 6; $bottomCats++) : ?>
+            <img src="./assets/img/cat.png" alt="A cat" class="cat" style="bottom : -112px; right: <?= $bottomCats * 100 ?>px; transform: rotate(180deg);" />
+          <?php endfor; ?>
+        <?php endif; ?>
         <?php $rows = $columns = 10; ?>
         <?php for ($i = 0; $i < $rows; $i++) : ?>
           <div class="garden-row">

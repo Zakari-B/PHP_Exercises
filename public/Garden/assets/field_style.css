@@ -171,47 +171,8 @@ div.description h2 {
   flex-direction: row;
 }
 
-.exercise > div.garden > img.cat1 {
+img.cat {
   position: absolute;
-  top: -112px;
-  right: 0;
-  height: 100px;
-}
-
-.exercise > div.garden > img.cat2 {
-  position: absolute;
-  top: 0;
-  right: -108px;
-  height: 100px;
-  transform: rotate(90deg);
-}
-
-.exercise > div.garden > img.cat3 {
-  position: absolute;
-  top: -112px;
-  left: 0;
-  height: 100px;
-}
-
-.exercise > div.garden > img.cat4 {
-  position: absolute;
-  top: 0;
-  left: -108px;
-  height: 100px;
-  transform: rotate(-90deg);
-}
-
-.exercise > div.garden > img.cat5 {
-  position: absolute;
-  top: -238px;
-  left: 50;
-  height: 250px;
-}
-
-.exercise > div.garden > img.cat6 {
-  position: absolute;
-  top: -112px;
-  left: 50;
   height: 100px;
 }
 
