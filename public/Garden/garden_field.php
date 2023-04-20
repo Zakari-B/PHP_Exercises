@@ -46,6 +46,7 @@ foreach ($field as $row) {
       <h1>Field</h1>
       <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
     </header>
+    <input type="checkbox" name="contrast" id="contrast" style="display: none" />
     <main class="exercise">
       <div class="description">
         <div class="half-v">
@@ -60,6 +61,7 @@ foreach ($field as $row) {
                   <?php endif; ?>
             </div>
           </div>
+          <label class="contrastLabel" for="contrast"> → Click here for high-contrast mode</label>
           <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
         </div>
         <div class="expectations">
@@ -67,8 +69,8 @@ foreach ($field as $row) {
             <?php foreach ($instructions[$stage]["result"] as $row) : ?>
               <div class="garden-row">
                 <?php foreach ($row as $rowItem) : ?>
-                  <div class="garden-plot-mini">
-                    <?= $rowItem ?? ' '; ?>
+                  <div class="garden-plot-mini" data-target="contrast">
+                    <p><?= $rowItem ?? ' '; ?></p>
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -94,9 +96,9 @@ foreach ($field as $row) {
         <?php for ($i = 0; $i < $rows; $i++) : ?>
           <div class="garden-row">
             <?php for ($j = 0; $j < $columns; $j++) : ?>
-              <div class="garden-plot">
+              <div class="garden-plot" data-target="contrast">
                 <?php if (empty($errors)) : ?>
-                  <?= $field[$i][$j] ?? ' '; ?>
+                  <p><?= $field[$i][$j] ?? ' '; ?></p>
                 <?php endif; ?>
               </div>
             <?php endfor; ?>
