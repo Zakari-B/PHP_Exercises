@@ -45,8 +45,10 @@ foreach ($field as $row) {
       <a id="home" href="/"><img src="../assets/img/home.png" alt="Home icon"></a>
       <h1>Field</h1>
       <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
+
     </header>
     <input type="checkbox" name="contrast" id="contrast" style="display: none" />
+    <label class="contrastLabel" for="contrast">High-contrast</label>
     <main class="exercise">
       <div class="description">
         <div class="half-v">
@@ -61,19 +63,14 @@ foreach ($field as $row) {
                   <?php endif; ?>
             </div>
           </div>
-          <label class="contrastLabel" for="contrast"> → Click here for high-contrast mode</label>
           <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
         </div>
         <div class="expectations">
           <div class="garden earth">
             <?php foreach ($instructions[$stage]["result"] as $row) : ?>
-              <div class="garden-row">
                 <?php foreach ($row as $rowItem) : ?>
-                  <div class="garden-plot-mini" data-target="contrast">
-                    <p><?= $rowItem ?? ' '; ?></p>
-                  </div>
+                    <div class="garden-plot" data-target="contrast"><?= $rowItem ?? ' '; ?></div>
                 <?php endforeach; ?>
-              </div>
             <?php endforeach ?>
           </div>
         </div>
@@ -117,7 +114,6 @@ foreach ($field as $row) {
         <?php endif; ?>
         <?php $rows = $columns = 10; ?>
         <?php for ($i = 0; $i < $rows; $i++) : ?>
-          <div class="garden-row">
             <?php for ($j = 0; $j < $columns; $j++) : ?>
               <div class="garden-plot" data-target="contrast">
                 <?php if (empty($errors)) : ?>
@@ -125,7 +121,6 @@ foreach ($field as $row) {
                 <?php endif; ?>
               </div>
             <?php endfor; ?>
-          </div>
         <?php endfor; ?>
       </div>
     </main>
