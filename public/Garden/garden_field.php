@@ -66,7 +66,7 @@ foreach ($field as $row) {
           <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
         </div>
         <div class="expectations">
-          <div class="garden earth">
+          <div class="garden">
             <?php foreach ($instructions[$stage]["result"] as $row) : ?>
                 <?php foreach ($row as $rowItem) : ?>
                     <div class="garden-plot" data-target="contrast"><?= $rowItem ?? ' '; ?></div>
