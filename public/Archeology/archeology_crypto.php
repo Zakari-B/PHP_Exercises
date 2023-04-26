@@ -4,7 +4,7 @@
 //// DO NOT TOUCH THIS FILE ////
 /*****************************/
 
-include __DIR__ . './muralBridge.php';
+include __DIR__ . '/muralBridge.php';
 
 $instructions = json_decode(file_get_contents("./assets/mural_instructions.json"), true);
 
