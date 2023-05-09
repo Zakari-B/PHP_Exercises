@@ -31,11 +31,19 @@ aside {
     box-shadow: 3px 0 3px 3px var(--background);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: var(--spacing2);
+    justify-content: flex-start;
     font-family: var(--text-font-garden);
     align-self: stretch;
-    background: var(--background, var(--intermediate));
+    background-image: var(--background-aside);
+    background-repeat: repeat;
+    box-shadow: 8px 0 24px -2px var(--dark);
+    padding: var(--spacing2);
+    gap: 0;
+}
+
+aside>* {
+    background-color: var(--transparent-bg);
+    flex-grow: 1;
 }
 
 aside h2 {
@@ -70,7 +78,7 @@ aside .expectations .garden {
     margin: 0.5rem 2.5rem;
 }
 
-aside > header {
+aside>header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -79,13 +87,13 @@ aside > header {
     gap: var(--spacing);
 }
 
-aside>header h2  {
+aside>header h2 {
     flex-grow: 2;
 }
 
 .btn:any-link {
     text-decoration: none;
-    color:var(--primary) ;
+    color: var(--primary);
 }
 
 .btn {
@@ -94,7 +102,7 @@ aside>header h2  {
     gap: 0.5rem;
     font-size: 1.3rem;
     background-color: var(--dark);
-    color:var(--primary) ;
+    color: var(--primary);
     padding: 0.5rem;
     border-radius: 8px;
     text-decoration: none;

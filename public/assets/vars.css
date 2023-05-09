@@ -19,6 +19,8 @@
   --dark: rgb(43, 46, 43);
   --intermediate: rgb(125, 125, 125);
   --light: rgb(230, 230, 230);
+  --transparent-light:rgba(255, 255, 255, 0.2);
+  --transparent-bg: #ffffffaa;
 
   --spacing: 1rem;
   --spacing2: 2rem;

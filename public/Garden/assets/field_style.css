@@ -1,30 +1,11 @@
-:root {
-  --title-font: var(--title-font-garden);
-  --title-color: var(--title-color-garden);
-
-}
-
 body {
   --background-image: url('img/grassbg.jpg');
   background-image: var(--background-image);
 }
 
 aside {
-  background-image: url("img/pavement.webp");
-  background-repeat: repeat;
-  box-shadow: 8px 0 24px -2px var(--dark);
-  padding: var(--spacing2);
-  gap: 0;
-  justify-content: flex-start;
-}
-
-aside>* {
-  --transparent-light: #ffffffaa;
-  background-color: var(--transparent-light);
-}
-
-aside> :is(p, div) {
-  flex-grow: 3;
+  --background-aside: url("img/pavement.webp");
+  background-image: var(--background-aside);
 }
 
 .garden {
@@ -63,15 +44,8 @@ img.cat {
 }
 
 .garden-plot:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--transparent-light);
 }
-
-
-
-
-/******* Sidebar ******/
-
-
 
 /********** contrast *************/
 
