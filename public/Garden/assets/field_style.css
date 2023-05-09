@@ -1,182 +1,47 @@
-@import url("../../assets/reset.css");
-@import url("../../assets/vars.css");
-@import url("../../assets/headerAndFooter.css");
-
 :root {
   --title-font: var(--title-font-garden);
   --title-color: var(--title-color-garden);
-  --spacing: 1rem;
-  --spacing2: 2rem;
+
 }
 
-
-.container {
-  background-color: var(--bodybg);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  background-image: url("./img/grassbg.jpg");
+body {
+  --background-image: url('img/grassbg.jpg');
+  background-image: var(--background-image);
 }
 
-main {
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  padding: var(--spacing);
-  margin-block: var(--spacing2);
+aside {
+  background-image: url("img/pavement.webp");
+  background-repeat: repeat;
+  box-shadow: 8px 0 24px -2px var(--dark);
+  padding: var(--spacing2);
+  gap: 0;
+  justify-content: flex-start;
 }
 
-.exercise {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
-  gap: 2rem;
+aside>* {
+  --transparent-light: #ffffffaa;
+  background-color: var(--transparent-light);
 }
 
-.exercise>div.description {
-  display: flex;
-  flex-direction: column;
-  border: 5px solid rgb(55, 55, 55);
-  background-color: rgb(200, 200, 200);
-  border-radius: 1rem;
-  padding: 20px;
-  font-family: var(--text-font-garden);
-}
-
-.contrastLabel {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing);
-  position: absolute;
-  z-index: 2;
-  top: var(--spacing);
-  right: var(--spacing);
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--dark);
-  padding: var(--spacing);
-  background-color: rgba(200, 200, 200, 0.75);
-  border-radius: 8px;
-  border: 2px solid var(--dark);
-}
-
-.contrastLabel::after {
-  display: inline-block;
-  content: "";
-  width: 80px;
-  aspect-ratio: 2 / 1;
-  --gradient-orientation: -90deg; 
-  --toggle-color: grey;
-  background: linear-gradient(var(--gradient-orientation), var(--light) 50%, var(--toggle-color) 50% );
-  border-radius: 8px;
-  border: 2px solid var(--dark);
-  box-shadow: inset 0 0 2px var(--dark);
-}
-
-#contrast:checked + .contrastLabel::after {
-  --toggle-color: var(--title-color);
-  --gradient-orientation: 90deg;
-  box-shadow:  0 0 5px 2px var(--light);
-} 
-
-#contrast:checked~main [data-target="contrast"] {
-  background-color: black;
-  border: 1px solid white;
-}
-
-#contrast:checked~main [data-target="contrast"]>p {
-  color: white;
-  filter: drop-shadow(2px 2px 2px black) drop-shadow(-1px -1px 8px #ffffff8a);
-}
-
-div.description p {
-  font-size: 1.2rem;
-}
-
-div.description>img {
-  align-self: center;
-  max-height: 300px;
-  max-width: 300px;
-}
-
-.half-v {
-  height: 50%;
-}
-
-.half-v>p {
-  margin-top: 1rem;
-}
-
-div.description {
-  gap: 1.5rem;
-}
-
-div.description h2 {
-  font-size: 2rem;
-  text-decoration: underline;
-  margin-bottom: 10px;
-}
-
-.description-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-btn {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.nav-btn>a {
-  font-size: 1.3rem;
-  border: 2px solid black;
-  background-color: rgb(200, 200, 200);
-  color: black;
-  padding: 0.5rem;
-  text-decoration: none;
-  border-radius: 0.5rem;
-}
-
-.nav-btn>a:hover {
-  filter: brightness(110%);
-}
-
-.expectations {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+aside> :is(p, div) {
+  flex-grow: 3;
 }
 
 .garden {
-  --plant-size: clamp(1.5rem,  3vw, 2.5rem);
+  --plant-size: clamp(1.5rem, 3vw, 2.5rem);
+  --garden-border-size: 8px;
   position: relative;
   display: grid;
-  --garden-border-size: 8px;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
+  width: clamp(360px, 60vw, 800px);
+  place-self: center;
   border: calc(var(--garden-border-size) * 3) solid transparent;
   border-image: url("img/plankbg.jpg") 10% round;
   box-shadow: inset 0 0 var(--garden-border-size) var(--garden-border-size) rgba(0, 0, 0, 0.5);
   background-image: url("img/soilbg.jpg");
   aspect-ratio: 1;
-}
-
-.expectations .garden {
-  --plant-size: 1.5rem;
-  min-width: 65%;
-  --garden-border-size: 4px;
-}
-
-
-.errors>p {
-  font-weight: bold;
-  margin: auto 1rem;
-}
-
-.errors li {
-  list-style: circle;
-  margin: 0.5rem 2.5rem;
+  margin: calc(var(--spacing2) * 2);
 }
 
 .garden-row {
@@ -199,4 +64,53 @@ img.cat {
 
 .garden-plot:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+
+
+/******* Sidebar ******/
+
+
+
+/********** contrast *************/
+
+.contrastLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing);
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--light);
+  padding: calc(var(--spacing) / 2);
+  border: 2px solid var(--dark);
+}
+
+.contrastLabel::after {
+  display: inline-block;
+  content: "";
+  width: 60px;
+  aspect-ratio: 2 / 1;
+  --gradient-orientation: -90deg;
+  --toggle-color: var(--intermediate);
+  background: linear-gradient(var(--gradient-orientation), var(--light) 50%, var(--toggle-color) 50%);
+  border-radius: 8px;
+  border: 2px solid var(--dark);
+  box-shadow: inset 0 0 2px var(--dark);
+}
+
+#contrast:checked+nav .contrastLabel::after {
+  --toggle-color: var(--primary);
+  --gradient-orientation: 90deg;
+  box-shadow: 0 0 5px 2px var(--light);
+}
+
+#contrast:checked~main [data-target="contrast"] {
+  background-color: black;
+  border: 1px solid white;
+}
+
+#contrast:checked~main [data-target="contrast"]>p {
+  color: white;
+  filter: drop-shadow(2px 2px 2px black) drop-shadow(-1px -1px 8px #ffffff8a);
 }

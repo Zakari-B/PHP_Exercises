@@ -1,0 +1,120 @@
+@import url("../../assets/reset.css");
+@import url("../../assets/vars.css");
+@import url("../../assets/headerAndFooter.css");
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-size-text);
+    min-height: 100vh;
+    line-height: 150%;
+}
+
+main {
+    display: grid;
+    grid-template-columns: var(--grid-template-columns, 1fr 2fr);
+    grid-template-rows: calc(100vh - var(--navbar));
+    gap: var(--spacing);
+    flex-grow: 2;
+    transition: 0.5s;
+}
+
+:where(h1, h2, h3, h4) {
+    font-family: var(--title-font);
+}
+
+aside {
+    transition: 0.5s;
+    box-shadow: 3px 0 3px 3px var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing2);
+    font-family: var(--text-font-garden);
+    align-self: stretch;
+    background: var(--background, var(--intermediate));
+}
+
+aside h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+aside p {
+    padding: var(--spacing);
+}
+
+aside .expectations .garden {
+    --plant-size: 1.5rem;
+    width: 65%;
+    --garden-border-size: 4px;
+}
+
+.expectations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errors>p {
+    font-weight: bold;
+    margin: auto 1rem;
+}
+
+.errors li {
+    list-style: circle;
+    margin: 0.5rem 2.5rem;
+}
+
+aside > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--spacing);
+    gap: var(--spacing);
+}
+
+aside>header h2  {
+    flex-grow: 2;
+}
+
+.btn:any-link {
+    text-decoration: none;
+    color:var(--primary) ;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    background-color: var(--dark);
+    color:var(--primary) ;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    text-decoration: none;
+}
+
+.btn>a:hover {
+    filter: brightness(110%);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+@media screen and (width < 800px) {
+    main {
+        --grid-template-columns: 1fr;
+    }
+
+    .sandbox {
+        grid-row: 1 / 1;
+    }
+}
