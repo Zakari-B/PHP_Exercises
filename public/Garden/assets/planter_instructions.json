@@ -35,42 +35,56 @@
         }
     },
     "6": {
-        "desc" : "You have two other planters, the first one containing 2 plants, the second one containing 3. You must find the array method to put both of those arrays in your planter.",
+        "desc" : "Still by using a loop, fill only one every two spots.",
+        "result": {
+            "planter": ["🌱", "", "🌱", "", "🌱"],
+            "pot": ""
+        }
+    },
+    "7": {
+        "desc" : "With a loop, fill the planter once again but this time by alternating two different plants.",
+        "result": {
+            "planter": ["🌱", "🌸", "🌱", "🌸", "🌱"],
+            "pot": ""
+        }
+    },
+    "8": {
+        "desc" : "You have two planters, the first one containing 2 plants, the second one containing 3. You must find and use the right array method to put both of those arrays in your main planter.",
         "result": {
             "planter": ["🌱", "🌱", "🌱", "🌱", "🌱"],
             "pot": ""
         }
     },
-    "7": {
-        "desc" : "That flower should be in the pot, so let's use it. Remove the last element from the planter and add it to the pot with the right array method.",
+    "9": {
+        "desc" : "That flower should be in the pot, so let's transfer it. Remove the last element from the planter and add it to the pot with the right array method.\n(Hint: There are two pairs of methods to add or remove elements from the beginning or the end of an array. Some of them will return the value being handled.)",
         "result": {
             "planter": ["🌱", "🌱", "🌱", "🌱", ""],
             "pot": "🌸"
         }
     },
-    "8": {
-        "desc" : "Same exercise as the previous one, but this time you need to remove the first element from the planter and add it to the pot.\n(Hint: you can use two different methods with very similar names)",
+    "10": {
+        "desc" : "Same exercise as the previous one, but this time you need to remove the first element from the planter and add it to the pot.",
         "result": {
             "planter": ["", "🌱", "🌱", "🌱", "🌱"],
             "pot": "🌸"
         }
     },
-    "9": {
+    "11": {
         "desc" : "There is a rose among the tulips. Replace it with a tulip with an array method.",
         "result": {
             "planter": ["🌷", "🌷", "🌷", "🌷", "🌷"],
             "pot": ""
         }
     },
-    "10": {
-        "desc" : "The flower arrangement looks nice but... I think it would look better if we turned it around with the appropriate array method.",
+    "12": {
+        "desc" : "The flower arrangement looks nice but... Maybe it would look better if we reversed it with the appropriate array method.",
         "result": {
             "planter": ["🏵️", "🌸", "🌷", "🌹", "🌼"],
             "pot": ""
         }
     },
-    "11": {
-        "desc" : "Plant the flowers you want to plant. However, if there is at least one 'Rosette' in the planter, there must be a sunflower in the pot.",
+    "13": {
+        "desc" : "Plant the flowers you prefer. However, if there is at least one 'Rosette' in the planter, there must be a sunflower in the pot.",
         "result": {
             "planter": ["🏵️", "🌱", "🌱", "🌱", "🌱"],
             "pot": "🌻"

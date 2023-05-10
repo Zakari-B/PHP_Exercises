@@ -47,7 +47,9 @@ foreach ($field as $row) {
       <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
     </header>
     <input type="checkbox" name="contrast" id="contrast" style="display: none" />
-    <main class="exercise">
+    <main class="exercise <?php if ($stage === '23') {
+                            echo "final";
+                          } ?>">
       <div class="description">
         <div class="half-v">
           <div class="description-top">

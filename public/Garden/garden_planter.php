@@ -66,7 +66,7 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
             <h1>The planter</h1>
             <a id="back" href="/Garden/"><img src="../assets/img/back.png" alt="Home icon" /></a>
         </header>
-
+        <input type="checkbox" name="contrast" id="contrast" style="display: none" />
         <main class="exercise">
             <?php if (isset($errors)) : ?>
                 <div class="error">
@@ -79,16 +79,16 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
             <div class="content">
                 <div class="planter">
                     <?php for ($i = 0; $i < 5 && $planterIsInvalid === false; $i++) : ?>
-                        <div class="plot">
-                            <?= $plants[$stage]['planter'][$i] ?? '' ?>
+                        <div class="plot" data-target="contrast">
+                            <p><?= $plants[$stage]['planter'][$i] ?? '' ?></p>
                         </div>
                     <?php endfor; ?>
                 </div>
 
                 <div class="planter pot">
-                    <div class="plot">
+                    <div class="plot" data-target="contrast">
                         <?php if ($planterIsInvalid === false) : ?>
-                            <?= $plants[$stage]['pot'] ?? ''; ?>
+                            <p><?= $plants[$stage]['pot'] ?? ''; ?></p>
                         <?php endif ?>
                     </div>
                 </div>
@@ -109,20 +109,21 @@ if (!in_array($plants[$stage]['pot'], $allowedList)) {
                                 <?php endif; ?>
                     </div>
                 </div>
+                <label class="contrastLabel" for="contrast"> → Click here for high-contrast mode</label>
                 <p><?= nl2br($instructions[$stage]["desc"]) ?></p>
 
                 <div class="expectations">
                     <p>Expected : </p>
                     <div class="planter mini">
                         <?php foreach ($instructions[$stage]["result"]["planter"] as $plant) : ?>
-                            <div class="plot">
-                                <?= $plant ?>
+                            <div class="plot" data-target="contrast">
+                                <p><?= $plant ?></p>
                             </div>
                         <?php endforeach ?>
                     </div>
                     <div class="planter mini pot">
-                        <div class="plot">
-                            <?php echo $instructions[$stage]["result"]["pot"] ?>
+                        <div class="plot" data-target="contrast">
+                            <p><?= $instructions[$stage]["result"]["pot"] ?></p>
                         </div>
                     </div>
                 </div>
