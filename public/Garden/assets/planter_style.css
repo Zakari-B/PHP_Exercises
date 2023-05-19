@@ -1,34 +1,80 @@
-@import url("../../assets/reset.css");
-@import url("../../assets/vars.css");
-@import url("../../assets/headerAndFooter.css");
-
-:root {
-  --title-font: var(--title-font-garden);
-  --title-color: var(--title-color-garden);
-}
-
 body {
-  background-image: url("./img/grassbg.jpg");
-  min-width: 800px;
+  --background-image: url('img/grassbg.jpg');
+  background-image: var(--background-image);
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
+aside {
+  --background-aside: url("img/pavement.webp");
+  background-image: var(--background-aside);
 }
 
-main.exercise {
-  --content-width: 1100px;
+.planter {
+  perspective: 1500px;
+  --width: min(800px, 100%);
+  --height: 200px;
+  --plot-number: 5;
+  display: grid;
+  grid-template-columns: repeat(var(--plot-number), 1fr);
+  width: var(--width);
+  height: var(--height);
+  border-image: url("./img/clay.webp") 10 / calc(var(--height) / 10);
+  border-style: solid;
+  background-image: url("./img/soilbg.jpg");
   position: relative;
+  box-shadow: 0 25px 15px inset var(--dark);
+}
+
+.planter::after {
+  content: "";
+  background-image: url("./img/clay.webp");
+  height: calc(var(--height) / 2);
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translateY(calc(var(--height) / 2)) rotateX(-60deg);
+  transform-origin: top;
+  filter: brightness(60%);
+}
+
+.planter>div:hover {
+  background-color: var(--transparent-light);
+}
+
+.pot {
+  --width: 200px;
+  --height: 200px;
+  --plot-number: 1;
+}
+
+.plot {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(var(--height) / 2);
+  text-shadow: 0.5rem 0.5rem 10px rgba(0, 0, 0, 0.5);
+}
+
+.planter-pots {
+  display: flex;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
-  width: clamp(360px, 100%, var(--content-width));
-  margin: auto;
+  padding: var(--spacing);
+}
+
+.mini .planter {
+  --height: 100px;
+}
+.mini .pot {
+  --width: 100px;
+}
+
+img.cat {
+  position: absolute;
+  bottom: calc(var(--footerHeight) - 0.5rem);
+  left: 10px;
+  height: 100px;
 }
 
 .contrastLabel {
@@ -53,164 +99,4 @@ main.exercise {
 #contrast:checked ~ main [data-target="contrast"] > p {
   color: white;
   filter: drop-shadow(2px 2px 2px black) drop-shadow(-1px -1px 8px #ffffff8a);
-}
-
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: auto;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.planter {
-  perspective: 1500px;
-  --width: min(800px, 100%);
-  --height: 200px;
-  --plot-number: 5;
-  display: grid;
-  grid-template-columns: repeat(var(--plot-number), 1fr);
-  width: var(--width);
-  height: var(--height);
-  border-image: url("./img/clay.webp") 10 / calc(var(--height) / 10);
-  border-style: solid;
-  background-image: url("./img/soilbg.jpg");
-  position: relative;
-  box-shadow: 0 25px 15px inset rgba(0, 0, 0, 0.5);
-}
-
-.planter::after {
-  content: "";
-  background-image: url("./img/clay.webp");
-  height: calc(var(--height) / 2);
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  transform: translateY(calc(var(--height) / 2)) rotateX(-60deg);
-  transform-origin: top;
-  filter: brightness(60%);
-}
-
-.planter > div:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.pot {
-  --width: 200px;
-  --height: 200px;
-  --plot-number: 1;
-}
-
-.plot {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: calc(var(--height) / 2);
-  text-shadow: 0.5rem 0.5rem 10px rgba(0, 0, 0, 0.5);
-}
-
-.error {
-  --error-width: 250px;
-  position: absolute;
-  top: 33%;
-  left: calc(
-    50% - var(--error-width) / 2
-  ); /* Middle of screen minus half own width to center it*/
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: var(--error-width);
-  min-height: 80px;
-  max-height: 280px;
-  border: 5px solid rgb(55, 55, 55);
-  background-color: rgb(200, 200, 200);
-  border-radius: 15px;
-  padding: 20px;
-  font-family: var(--text-font-garden);
-  gap: 10px;
-  z-index: 1;
-}
-
-.error > p {
-  font-size: 1.1rem;
-  margin-bottom: 0;
-  color: rgb(200, 0, 0);
-}
-
-.instructions {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 5px solid rgb(55, 55, 55);
-  background-color: rgba(200, 200, 200, 0.9);
-  border-radius: 1rem;
-  padding: 3rem;
-  font-family: var(--text-font-garden);
-}
-
-.instructions h2 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.instructions-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
-
-.instructions > p {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-.expectations {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-
-.mini {
-  --width: 400px;
-  --height: 100px;
-}
-
-.mini.pot {
-  --width: 100px;
-}
-
-div.expectations > p {
-  align-self: center;
-  font-size: 1.3rem;
-  margin-bottom: 0;
-}
-
-.nav-btn {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.nav-btn > a {
-  font-size: 1.3rem;
-  border: 2px solid black;
-  background-color: rgb(200, 200, 200);
-  color: black;
-  padding: 0.5rem;
-  text-decoration: none;
-  border-radius: 0.5rem;
-}
-
-.nav-btn > a:hover {
-  filter: brightness(110%);
-}
-
-img.cat {
-  position: absolute;
-  bottom: calc(var(--footerHeight) - 0.5rem);
-  left: 10px;
-  height: 100px;
 }
