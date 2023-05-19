@@ -1,32 +1,35 @@
-@import url("../../assets/reset.css");
-@import url("../../assets/vars.css");
-@import url("../../assets/headerAndFooter.css");
-
 :root {
   --mainContainerPadding: 50px;
   --pamphletPageHeight: 1080px;
-  --title-font: var(--title-font-archeology);
-  --title-color: var(--title-color-archeology);
+
+  --primary: rgb(200, 200, 200);
+  --title-font: "Luxurious Roman", cursive;
 }
 
 body {
-  background-color: rgba(10, 10, 10, 0.9);
-  position: relative;
-  max-width: 1920px;
-  max-height: var(--pamphletPageHeight);
-  margin: auto;
-  z-index: -2;
+  --background-image: url('img/wall.jpg');
+  background-image: var(--background-image);
+  min-width:1920px;
 }
 
-.container {
-  margin: auto;
-  width: 1920px;
-  height: var(--pamphletPageHeight);
-  background-image: url("./img/wall.jpg");
-  background-size: cover;
+aside {
+  --background-aside: url("img/mural_border.jpg");
+  background-image: var(--background-aside);
+  background-size:contain
 }
 
-main.exercise {
+.expectations p {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-family: "Luxurious Roman", cursive
+}
+
+br {
+  display: block;
+  margin: 15px 0;
+  content: " ";
+}
+
+main .sandbox {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -54,7 +57,7 @@ main.exercise {
   box-shadow: 6px 6px 6px rgba(50, 50, 50, 0.75);
 }
 
-.papyrus-nav {
+.papyrus-decal {
   position: absolute;
   height: calc(
     var(--pamphletPageHeight) - var(--navHeight) - var(--footerHeight) - 200px
@@ -64,38 +67,20 @@ main.exercise {
   background-size: cover;
   z-index: -1;
   box-shadow: 6px 6px 6px rgba(50, 50, 50, 0.75);
-  cursor: pointer;
-
-  font-size: 1.1rem;
-  padding: 5px;
-  font-weight: bold;
-  color: white;
 }
 
-.next-button {
+.papyrus-right {
   text-align: right;
   top: 10px;
   right: -30px;
   transform: rotate(5deg);
 }
 
-.back-button {
+.papyrus-left {
   text-align: left;
   top: 10px;
   left: -30px;
   transform: rotate(-5deg);
-}
-
-.papyrus-nav:hover {
-  filter: brightness(0.5);
-}
-
-.hover-text {
-  display: none;
-}
-
-.papyrus-nav:hover > .hover-text {
-  display: block;
 }
 
 .notepad {
@@ -117,7 +102,7 @@ main.exercise {
   box-shadow: 3px 3px 5px rgba(72, 72, 72, 0.5);
   padding: 20px;
   transform: rotate(-15deg);
-  left: 300px;
+  left: 100px;
   bottom: 0;
 }
 
@@ -155,3 +140,10 @@ main.exercise {
   font-size: 1.75rem;
   font-family: var(--title-font);
 }
+
+@media screen and (width < 800px) {
+  body {
+    min-width:1400px;
+  }
+}
+

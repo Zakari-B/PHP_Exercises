@@ -1,0 +1,9 @@
+body {
+  --background-image: url('img/grassbg.jpg');
+  background-image: var(--background-image);
+}
+
+aside {
+  --background-aside: url("img/pavement.webp");
+  background-image: var(--background-aside);
+}

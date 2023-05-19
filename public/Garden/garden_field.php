@@ -33,7 +33,7 @@ foreach ($field as $row) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="/assets/theme.css" media="screen" rel="stylesheet" type="text/css" />
 	<link href="/Garden/assets/field_style.css" media="screen" rel="stylesheet" type="text/css" />
-	<title>Garden</title>
+	<title>Field Exercise</title>
 </head>
 
 <body class="container">
@@ -46,6 +46,16 @@ foreach ($field as $row) {
 				</svg>
 			</a>
 			<h1>Field</h1>
+			<a class="back" href="/Garden">
+				<svg xmlns=" http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 20 20">
+					<path d="M18.271,9.212H3.615l4.184-4.184c0.306-0.306,0.306-0.801,0-1.107c-0.306-0.306-0.801-0.306-1.107,0
+						L1.21,9.403C1.194,9.417,1.174,9.421,1.158,9.437c-0.181,0.181-0.242,0.425-0.209,0.66c0.005,0.038,0.012,0.071,0.022,0.109
+						c0.028,0.098,0.075,0.188,0.142,0.271c0.021,0.026,0.021,0.061,0.045,0.085c0.015,0.016,0.034,0.02,0.05,0.033l5.484,5.483
+						c0.306,0.307,0.801,0.307,1.107,0c0.306-0.305,0.306-0.801,0-1.105l-4.184-4.185h14.656c0.436,0,0.788-0.353,0.788-0.788
+						S18.707,9.212,18.271,9.212z">
+					</path>
+				</svg>
+			</a>
 		</div>
 		<label class="contrastLabel" for="contrast">High-contrast</label>
 	</nav>
@@ -103,26 +113,26 @@ foreach ($field as $row) {
 		<div class="sandbox garden">
 			<?php for ($cats = 1; $cats <= $stage; $cats++) : ?>
 				<?php if ($cats < 7 && $stage != 23) : ?>
-					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -112px; left: <?= ($cats - 1) * 100 ?>px" />
+					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -107px; left: <?= ($cats - 1) * 133 ?>px" />
 				<?php endif; ?>
 				<?php if ($cats >= 7 && $cats < 13) : ?>
-					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="right : -108px; top: <?= ($cats - 7) * 100 ?>px; transform: rotate(90deg);" />
+					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="right : -104px; top: <?= ($cats - 7) * 133 ?>px; transform: rotate(90deg);" />
 				<?php endif; ?>
 				<?php if ($cats >= 13 && $cats < 19) : ?>
-					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="left : -108px; bottom: <?= ($cats - 13) * 100 ?>px; transform: rotate(-90deg);" />
+					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="left : -104px; bottom: <?= ($cats - 13) * 133 ?>px; transform: rotate(-90deg);" />
 				<?php endif; ?>
 				<?php if ($cats >= 19 && $cats < 23 && $stage !== '23') : ?>
-					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="bottom : -112px; right: <?= ($cats - 19) * 170 ?>px; transform: rotate(180deg);" />
+					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="bottom : -107px; right: <?= ($cats - 19) * 222 ?>px; transform: rotate(180deg);" />
 				<?php endif; ?>
 			<?php endfor; ?>
 			<?php if ($stage === '23') : ?>
-				<img src="./assets/img/cat2.png" alt="A cat" class="cat" style="top : -238px; left: 50; height: 250px" />
+				<img src="./assets/img/cat2.png" alt="A cat" class="cat" style="top : -232px; left: calc(50% - 125px); height: 250px" />
 				<?php for ($bossCats = 1; $bossCats <= 2; $bossCats++) : ?>
-					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -112px; left: <?= ($bossCats - 1) * 100 ?>px" />
-					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -112px; right: <?= ($bossCats - 1) * 100 ?>px" />
+					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -107px; left: <?= ($bossCats - 1) * 100 ?>px" />
+					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="top : -107px; right: <?= ($bossCats - 1) * 100 ?>px" />
 				<?php endfor; ?>
 				<?php for ($bottomCats = 0; $bottomCats < 6; $bottomCats++) : ?>
-					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="bottom : -112px; right: <?= $bottomCats * 100 ?>px; transform: rotate(180deg);" />
+					<img src="./assets/img/cat.png" alt="A cat" class="cat" style="bottom : -107px; right: <?= $bottomCats * 133 ?>px; transform: rotate(180deg);" />
 				<?php endfor; ?>
 			<?php endif; ?>
 			<?php $rows = $columns = 10; ?>

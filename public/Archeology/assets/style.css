@@ -1,8 +1,16 @@
 @import url("../../assets/reset.css");
 @import url("../../assets/vars.css");
+@import url("../../assets/headerAndFooter.css");
+
+:root {
+  --primary: rgb(200, 200, 200);
+  --title-font: "Luxurious Roman", cursive;
+}
 
 body {
   background-color: var(--bodybg);
+  width:fit-content;
+  margin:auto;
 }
 
 .archeology-main {
@@ -15,26 +23,6 @@ body {
   background-image: url("./img/ruins.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: var(--navHeight);
-}
-
-header > h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  font-family: "Luxurious Roman", cursive;
-  line-height: 4rem;
-  padding: 1rem;
-  color: rgb(200, 200, 200);
-  background-color: rgba(35, 35, 35, 0.6);
-  border-radius: 15px;
 }
 
 #home {
