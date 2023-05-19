@@ -1,0 +1,157 @@
+@import url("../../assets/reset.css");
+@import url("../../assets/vars.css");
+@import url("../../assets/headerAndFooter.css");
+
+:root {
+  --mainContainerPadding: 50px;
+  --pamphletPageHeight: 1080px;
+  --title-font: var(--title-font-archeology);
+  --title-color: var(--title-color-archeology);
+}
+
+body {
+  background-color: rgba(10, 10, 10, 0.9);
+  position: relative;
+  max-width: 1920px;
+  max-height: var(--pamphletPageHeight);
+  margin: auto;
+  z-index: -2;
+}
+
+.container {
+  margin: auto;
+  width: 1920px;
+  height: var(--pamphletPageHeight);
+  background-image: url("./img/wall.jpg");
+  background-size: cover;
+}
+
+main.exercise {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  height: calc(
+    var(--pamphletPageHeight) - var(--navHeight) - var(--footerHeight)
+  );
+  padding-top: var(--mainContainerPadding);
+  z-index: 10;
+}
+
+.papyrus {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: calc(
+    var(--pamphletPageHeight) - var(--navHeight) - var(--footerHeight) - 100px
+  );
+  background-image: url("./img/papyrus.jpg");
+  aspect-ratio: 5000 / 3542;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 20px;
+  align-items: center;
+  box-shadow: 6px 6px 6px rgba(50, 50, 50, 0.75);
+}
+
+.papyrus-nav {
+  position: absolute;
+  height: calc(
+    var(--pamphletPageHeight) - var(--navHeight) - var(--footerHeight) - 200px
+  );
+  width: 100px;
+  background-image: url("./img/papyrus.jpg");
+  background-size: cover;
+  z-index: -1;
+  box-shadow: 6px 6px 6px rgba(50, 50, 50, 0.75);
+  cursor: pointer;
+
+  font-size: 1.1rem;
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.next-button {
+  text-align: right;
+  top: 10px;
+  right: -30px;
+  transform: rotate(5deg);
+}
+
+.back-button {
+  text-align: left;
+  top: 10px;
+  left: -30px;
+  transform: rotate(-5deg);
+}
+
+.papyrus-nav:hover {
+  filter: brightness(0.5);
+}
+
+.hover-text {
+  display: none;
+}
+
+.papyrus-nav:hover > .hover-text {
+  display: block;
+}
+
+.notepad {
+  position: absolute;
+  width: clamp(
+    300px,
+    20%,
+    calc(
+      (
+          var(--pamphletPageHeight) - var(--navHeight) - var(--footerHeight) -
+            100px
+        ) * (5000 / 3542) * 0.4
+    )
+  ); /* CALC : Up to 40% of the papyrus */
+  height: calc(
+    (var(--pamphletPageHeight) - var(--navHeight) - var(--footerHeight)) * 0.75
+  );
+  background-color: rgb(242, 242, 252);
+  box-shadow: 3px 3px 5px rgba(72, 72, 72, 0.5);
+  padding: 20px;
+  transform: rotate(-15deg);
+  left: 300px;
+  bottom: 0;
+}
+
+.notepad > p:hover + a > img {
+  opacity: 0.2;
+}
+
+.notepad > a > img {
+  position: absolute;
+  transform: rotate(15deg);
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.notepad > p {
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-family: cursive;
+  padding-right: 10%;
+}
+
+.papyrus > h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: var(--title-font);
+}
+
+.papyrus-container {
+  width: 70%;
+  align-self: flex-end;
+  margin-right: 20px;
+  height: 90%;
+  padding: 20px;
+  font-size: 1.75rem;
+  font-family: var(--title-font);
+}
