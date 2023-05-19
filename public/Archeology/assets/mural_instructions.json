@@ -1,17 +1,17 @@
 {
     "1": {
-        "desc": "It's a bit dark here... Start by finding and clicking the torch to get some light.",
-        "tabletMessage": "Open 'src/muralExercises.php'.\nIn this file, you will find one function per level. The input is what you see on the mural and the return will appear on this tablet.\nYour goal is to display the decoded message on this tablet.\nOn this first mural, it looks like the text has simply been reversed.",
+        "tabletMessage": "Hint : You can refresh the tablet display by clicking the red refresh button on the lower right hand side of the tablet.",
+        "instructions": "Open 'src/muralExercises.php'.\nIn this file, you will find one function per level. The input is what you see on the mural and the return will appear on this tablet.\nYour goal is to display the decoded message on this tablet.\nOn this first mural, it looks like the text has simply been reversed.",
         "muralMessage": "ysae si level tsrif ehT"
     },
     "2": {
-        "desc": "Hint : Did you know that you can refresh the tablet display by clicking the red refresh button on the lower right hand side of the tablet ?",
-        "tabletMessage": "It looks like for every letter in this message, a random character has been added to confuse you.\nTry reading (or removing) one out of two characters in the sentence.\n Oh, and try clicking the button on the right =>",
+        "tabletMessage": "",
+        "instructions": "It looks like for every letter in this message, a random character has been added to confuse you.\nTry reading (or removing) one out of two characters in the sentence.",
         "muralMessage": "Tgh8ek Js7emcLoinGdR 6lte4vzetl7 iiCsm 9nqoBto Zm8u1cehC LhJaNrid0eYru"
     },
     "3": {
-        "desc" : "",
-        "tabletMessage": "This one looks like a combination of the first two : reversed text with a random character inserted between every letter in the sentence.",
+        "tabletMessage" : "",
+        "instructions": "This one looks like a combination of the first two : reversed text with a random character inserted between every letter in the sentence.",
         "muralMessage": "sildeavle0lswo3wytM jtWsdr0iAfj XenhftV af8oo LnToaivtkaMnuiBb2mBoXcH maF asHiv WlZe9vkexlv Dd4reivhttO TeshVTe"
     }
 }

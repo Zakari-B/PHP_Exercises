@@ -8,6 +8,18 @@ aside {
   background-image: var(--background-aside);
 }
 
+aside .expectations {
+  display: flex;
+  justify-content: center;
+}
+
+aside .expectations .garden {
+--plant-size: 1.5rem;
+--garden-border-size: 4px;
+width:65%;
+min-width: calc((var(--plant-size) + 20px) * 10);
+}
+
 .garden {
   --plant-size: clamp(1.5rem, 3vw, 2.5rem);
   --garden-border-size: 8px;
@@ -28,11 +40,6 @@ aside {
 .garden-row {
   display: flex;
   flex-direction: row;
-}
-
-img.cat {
-  position: absolute;
-  height: 100px;
 }
 
 .garden-plot {
@@ -87,4 +94,16 @@ img.cat {
 #contrast:checked~main [data-target="contrast"]>p {
   color: white;
   filter: drop-shadow(2px 2px 2px black) drop-shadow(-1px -1px 8px #ffffff8a);
+}
+
+img.cat {
+  display:none;
+  position:absolute;
+  height:100px;
+}
+
+@media screen and (min-width: 1330px) {
+  img.cat {
+    display:block;
+  }
 }
