@@ -1,0 +1,14 @@
+{
+    "1": {
+        "desc": "The ruins guide is full of typos, you will have to write some code in the file 'src/pamphletExercises.php' to correct them.\nFor this first exercise, there is a typo on 'Welcome' as you can see. Just replace that first letter (hint : index 0) with the correct one.\nOnce you're done, clicking the pen will update what is written on the ruins guide so that you can check your work.\nTIP: Hover over the text to hide the pen.",
+        "sentences": "Xelcome to the ruins."
+    },
+    "2": {
+        "desc": "Those are the instructions for the second exercise",
+        "sentences": "These ruinz date bqck to the Roman era."
+    },
+    "3": {
+        "desc": "Those are the instructions for the third exercise",
+        "sentences": "The Roman Enpire was uinfied from 27BC to 395AD."
+    }
+}

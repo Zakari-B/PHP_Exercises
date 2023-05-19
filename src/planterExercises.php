@@ -22,13 +22,14 @@
 
 function planter1(): array
 {
-    $planter = [];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
+    $planter = [];
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -37,13 +38,14 @@ function planter1(): array
 
 function planter2(): array
 {
-    $planter = ['🌱'];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
+    $planter = [];
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -54,11 +56,12 @@ function planter3(): array
 {
     $planter = ['🌱', '🌱'];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -69,11 +72,12 @@ function planter4(): array
 {
     $planter = ['🌱', '🌱', '🌱'];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -84,29 +88,29 @@ function planter5(): array
 {
     $planter = [];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
     ];
 }
 
+
 function planter6(): array
 {
-
-    $otherPlanterA = ['🌱', '🌱'];
-    $otherPlanterB = ['🌱', '🌱', '🌱'];
     $planter = [];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -115,13 +119,14 @@ function planter6(): array
 
 function planter7(): array
 {
-    $planter = ['🌱', '🌱', '🌱', '🌱', '🌸'];
+    $planter = [];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -130,13 +135,17 @@ function planter7(): array
 
 function planter8(): array
 {
-    $planter = ['🌸', '🌱', '🌱', '🌱', '🌱'];
+
+    $otherPlanterA = ['🌱', '🌱'];
+    $otherPlanterB = ['🌱', '🌱', '🌱'];
+    $planter = [];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -145,13 +154,14 @@ function planter8(): array
 
 function planter9(): array
 {
-    $planter = ['🌷', '🌷', '🌹', '🌷', '🌷'];
+    $planter = ['🌱', '🌱', '🌱', '🌱', '🌸'];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -160,13 +170,14 @@ function planter9(): array
 
 function planter10(): array
 {
-    $planter = ['🌼', '🌹', '🌷', '🌸', '🏵️'];
+    $planter = ['🌸', '🌱', '🌱', '🌱', '🌱'];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,
@@ -175,13 +186,46 @@ function planter10(): array
 
 function planter11(): array
 {
+    $planter = ['🌷', '🌷', '🌹', '🌷', '🌷'];
+    $pot = '';
+    ///// CODE HERE /////
+
+
+
+
+    ////////////////////
+    return [
+        'planter' => $planter,
+        'pot' => $pot,
+    ];
+}
+
+function planter12(): array
+{
+    $planter = ['🌼', '🌹', '🌷', '🌸', '🏵️'];
+    $pot = '';
+    ///// CODE HERE /////
+
+
+
+
+    ////////////////////
+    return [
+        'planter' => $planter,
+        'pot' => $pot,
+    ];
+}
+
+function planter13(): array
+{
     $planter = [];
     $pot = '';
-    // WRITE YOUR CODE BELOW
+    ///// CODE HERE /////
 
 
 
-    /////
+
+    ////////////////////
     return [
         'planter' => $planter,
         'pot' => $pot,

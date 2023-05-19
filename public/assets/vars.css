@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Luxurious+Roman&family=Montserrat:wght@100;300;400;500;600;800&family=Roboto:wght@300;400;700&display=swap');
+
 :root {
   --HomeContentHeight: 854px;
   --HomeContentWidth: 1280px;
@@ -10,16 +12,18 @@
   --title-font-archeology: "Luxurious Roman", cursive;
   --text-font-archeology: "Luxurious Roman", cursive;
   --title-color-archeology: rgb(200, 200, 200);
-  --title-font-garden: "Permanent Marker", cursive;
-  --text-font-garden: "Varela Round", sans-serif;
-  --title-color-garden: rgb(100, 200, 20);
+  --title-font: Montserrat, cursive;
+  --text-font: "Varela Round", sans-serif;
+  --primary: rgb(144, 214, 3);
   --bodybg: rgba(10, 10, 10, 0.9);
-  --dark: rgb(20, 20, 20);
+  --dark: rgb(43, 46, 43);
   --intermediate: rgb(125, 125, 125);
   --light: rgb(230, 230, 230);
-  /*
+  --transparent-light:rgba(255, 255, 255, 0.2);
+  --transparent-bg: #ffffffaa;
+
   --spacing: 1rem;
   --spacing2: 2rem;
-  --spacing4: 4rem;
-  */
+
+  --font-size-text: 1.2rem;
 }

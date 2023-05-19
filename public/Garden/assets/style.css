@@ -18,7 +18,6 @@ body {
 }
 
 .garden-main {
-  border: 2px solid rgba(250, 150, 60, 0.75);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -104,4 +103,13 @@ p {
   border: 3px solid rgb(75, 75, 75);
   border-radius: 15px;
   background-color: rgba(200, 200, 200, 0.7);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--footerHeight);
+  color: var(--dark);
+  background-color: rgba(200, 200, 200, 0.5);
 }

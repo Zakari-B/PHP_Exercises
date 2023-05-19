@@ -12,23 +12,33 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap"
-      rel="stylesheet"
-    />
-    <title>Archeological site</title>
+    <title>PHP Exercises : Archeological site</title>
   </head>
 
   <body>
+    <nav class="center-nav">
+      <div class="brand">
+        <a class="home" href="/">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="42"
+            height="42"
+            fill="currentColor"
+            class="bi bi-house-door"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"
+            />
+          </svg>
+        </a>
+        <h1>Archeological Site</h1>
+      </div>
+    </nav>
+
     <main class="archeology-main">
-      <header>
-        <a id="home" href="/"
-          ><img src="../assets/img/home.png" alt="Home icon"
-        /></a>
-        <h1>Archeological site</h1>
-      </header>
       <main class="content">
-        <a href="./archeology_crypto.php">
+        <a href="/Archeology/archeology_crypto.php">
           <img
             class="mglass-link"
             id="ex1"
@@ -36,24 +46,30 @@
             alt="Magnifying glass icon"
           />
         </a>
-        <a href="#">
+        <!-- <a href="#">
           <img
             class="mglass-link"
             id="ex2"
             src="../assets/img/glass.png"
             alt="Magnifying glass icon"
           />
+        </a> -->
+        <a href="./archeology_pamphlet.php">
+          <div id="ex3">
+            <h6>Ruins</h6>
+            <p>Welcome to the ruins, you should probably start here...</p>
+          </div>
         </a>
       </main>
-      <footer>
-        <a href="/contributors.html">
-          <img
-            class="logo"
-            src="../assets/img/GitHub_Logo.png"
-            alt="Link to contributors list"
-          />
-        </a>
-      </footer>
     </main>
+    <footer>
+      <a href="/contributors.html">
+        <img
+          class="logo"
+          src="../assets/img/GitHub_Logo.png"
+          alt="Link to contributors list"
+        />
+      </a>
+    </footer>
   </body>
 </html>
